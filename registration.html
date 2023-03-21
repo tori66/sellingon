@@ -342,7 +342,7 @@
                 </div>
 
                 <div class="border-b border-gray-200 bg-white">
-                    <div class="mx-auto flex max-w-7xl py-2 px-4 md:px-6 lg:px-16" aria-label="Breadcrumb">
+                    <div class="mx-auto flex max-w-7xl py-2 px-4 lg:px-16" aria-label="Breadcrumb">
                         <ol role="list" class="flex items-center space-x-2">
                             <li>
                                 <div class="flex items-center">
@@ -356,7 +356,7 @@
                                     <svg class="h-4 w-4 flex-shrink-0 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                         <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" />
                                     </svg>
-                                    <a href="#" class="ml-1 text-xs text-gray-500 hover:text-gray-700">카테고리</a>
+                                    <a href="#" class="ml-1 text-xs text-gray-500 hover:text-gray-700">회원가입</a>
                                 </div>
                             </li>
                             <li>
@@ -364,7 +364,7 @@
                                     <svg class="h-4 w-4 flex-shrink-0 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                                         <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" />
                                     </svg>
-                                    <a href="#" class="ml-1 text-xs text-gray-500 hover:text-gray-700" aria-current="page">트렌드상품</a>
+                                    <a href="#" class="ml-1 text-xs text-gray-500 hover:text-gray-700" aria-current="page">약관동의</a>
                                 </div>
                             </li>
                         </ol>
@@ -375,201 +375,191 @@
 
         <main>
 
-            <!-- Products List Page -->
+            <!-- Registration Page -->
+            <!-- Login Page -->
             <div class="mx-auto max-w-7xl p-4 sm:p-6 lg:p-8">
 
-                <div class="flex items-center justify-between mt-6">
-                    <h2 class="text-2xl font-bold tracking-tight text-gray-900">Trending Products</h2>
-
-                    <!-- Dropdown menu on small screens -->
-                    <div x-data="{ MobileSort: false }" class="sm:hidden">
-                        <div class="relative inline-block text-left">
-                            <div>
-                                <button @click="MobileSort = !MobileSort" type="button" class="group inline-flex justify-center text-sm font-medium text-gray-700 hover:text-gray-900" id="menu-button" aria-expanded="false" aria-haspopup="true">
-                                    상품정렬
-                                    <svg class="-mr-1 ml-1 h-5 w-5 flex-shrink-0 text-gray-400 group-hover:text-gray-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                        <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
-                                    </svg>
-                                </button>
-                            </div>
-                            <div x-cloak x-show="MobileSort"
-                                x-transition:enter="transition ease-in-out duration-100"
-                                x-transition:enter-start="transform opacity-0 scale-95"
-                                x-transition:enter-end="transform opacity-100 scale-100"
-                                x-transition:leave="transition ease-in duration-75"
-                                x-transition:leave-start="transform opacity-100 scale-100"
-                                x-transition:leave-end="transform opacity-0 scale-95"
-                                class="absolute right-0 z-10 mt-2 w-32 origin-top-left rounded-md bg-white shadow-2xl ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
-                                <div class="py-1" role="none">
-                                    <!-- Active: "bg-gray-100", Not Active: "" -->
-                                    <a href="#" class="block px-4 py-2 text-sm text-gray-500" role="menuitem" tabindex="-1" id="menu-item-0">등록일순</a>
-                                    <a href="#" class="block px-4 py-2 text-sm text-gray-500" role="menuitem" tabindex="-1" id="menu-item-1">낮은가격순</a>
-                                    <a href="#" class="block px-4 py-2 text-sm text-gray-500" role="menuitem" tabindex="-1" id="menu-item-2">높은가격순</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="flex items-center justify-center mt-6">
+                    <h2 class="text-2xl font-bold tracking-tight text-gray-900">회원가입</h2>
                 </div>
             </div>
 
-            <section aria-labelledby="products-list-heading">
-                <div class="mx-auto max-w-7xl py-6 px-4 sm:px-6 sm:py-6 lg:px-8">
+            <section aria-labelledby="login-heading">
+                <div class="mx-auto max-w-4xl py-6 px-4 sm:px-6 sm:py-6 lg:px-8">
 
-                    <!-- Tabs at small breakpoint and up -->
-                    <div class="border-t md:border-b border-gray-200 pt-4 px-4">
-                        <div class="hidden sm:block">
-                            <div class="flex justify-between">
-                                <nav class="-mb-px flex space-x-8">
-                                    <!-- Current: "border-indigo-500 text-indigo-600", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" -->
-                                    <a href="#" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 whitespace-nowrap border-b-2 px-1 pb-4 text-sm font-medium">추천순</a>
-                                    <a href="#" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 whitespace-nowrap border-b-2 px-1 pb-4 text-sm font-medium">판매인기순</a>
-                                    <a href="#" class="border-indigo-500 text-indigo-600 whitespace-nowrap border-b-2 px-1 pb-4 text-sm font-medium" aria-current="page">등록일순</a>
-                                    <a href="#" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 whitespace-nowrap border-b-2 px-1 pb-4 text-sm font-medium">낮은가격순</a>
-                                    <a href="#" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 whitespace-nowrap border-b-2 px-1 pb-4 text-sm font-medium">높은가격순</a>
-                                </nav>
-                                <div class="-mt-1">
-                                    <div x-data="{ SortNumber: false }" class="">
-                                        <div class="relative inline-block text-left">
-                                            <div>
-                                                <button @click="SortNumber = !SortNumber" type="button" class="group inline-flex justify-center text-sm font-medium text-gray-700 hover:text-gray-900" id="menu-button" aria-expanded="false" aria-haspopup="true">
-                                                    보기 갯수
-                                                    <svg class="-mr-1 ml-1 h-5 w-5 flex-shrink-0 text-gray-400 group-hover:text-gray-500" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                                        <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
-                                                    </svg>
-                                                </button>
-                                            </div>
-                                            <div x-cloak x-show="SortNumber"
-                                                x-transition:enter="transition ease-in-out duration-100"
-                                                x-transition:enter-start="transform opacity-0 scale-95"
-                                                x-transition:enter-end="transform opacity-100 scale-100"
-                                                x-transition:leave="transition ease-in duration-75"
-                                                x-transition:leave-start="transform opacity-100 scale-100"
-                                                x-transition:leave-end="transform opacity-0 scale-95"
-                                                class="absolute right-0 z-10 mt-2 w-36 origin-top-left rounded-md bg-white shadow-2xl ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
-                                                <div class="py-1" role="none">
-                                                    <!-- Active: "bg-gray-100", Not Active: "" -->
-                                                    <a href="#" class="block px-4 py-2 text-sm text-gray-500" role="menuitem" tabindex="-1" id="menu-item-0">20개씩 보기</a>
-                                                    <a href="#" class="block px-4 py-2 text-sm text-gray-500" role="menuitem" tabindex="-1" id="menu-item-1">40개씩 보기</a>
-                                                    <a href="#" class="block px-4 py-2 text-sm text-gray-500" role="menuitem" tabindex="-1" id="menu-item-2">100개씩 보기</a>
-                                                    <a href="#" class="block px-4 py-2 text-sm text-gray-500" role="menuitem" tabindex="-1" id="menu-item-2">전체 보기</a>
+                    <form class="mt-6 space-y-8 divide-y divide-gray-200">
+                        <div class="space-y-8 divide-y divide-gray-200 sm:space-y-5">
+                            <div class="space-y-6 sm:space-y-5">
+                                <div>
+                                    <h3 class="text-base font-semibold leading-6 text-gray-900">약관동의</h3>
+                                </div>
+
+                                <div class="space-y-6 sm:space-y-5">
+                                    <div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-5">
+                                        <div class="mt-2 sm:col-span-3 sm:mt-0">
+                                            <div class="relative flex items-start py-2">
+                                                <div class="flex h-6 items-center">
+                                                    <input id="term" name="term" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                </div>
+                                                <div class="ml-3 text-sm leading-6 flex items-center">
+                                                    <label for="term" class="font-medium text-gray-900">(필수) 이용약관</label>
+                                                    <p class="ml-6 text-xs text-gray-500">전체보기</p>
                                                 </div>
                                             </div>
+                                            <textarea id="about" name="about" rows="5"
+                                                class="block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:py-1.5 sm:text-sm sm:leading-6 overflow-y-auto"></textarea>
+                                        </div>
+                                        <div class="mt-2 sm:col-span-3 sm:mt-0">
+                                            <div class="relative flex items-start py-2">
+                                                <div class="flex h-6 items-center">
+                                                    <input id="term" name="term" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                </div>
+                                                <div class="ml-3 text-sm leading-6 flex items-center">
+                                                    <label for="term" class="font-medium text-gray-900">(필수) 개인정보 수집 및 이용</label>
+                                                    <p class="ml-6 text-xs text-gray-500">전체보기</p>
+                                                </div>
+                                            </div>
+                                            <textarea id="about" name="about" rows="5"
+                                                class="block w-full rounded-md border-0 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:py-1.5 sm:text-sm sm:leading-6 overflow-y-auto"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="space-y-6 pt-8 sm:space-y-5 sm:pt-10">
+                                <div>
+                                    <h3 class="text-base font-semibold leading-6 text-gray-900">기본정보 입력</h3>
+                                    <p class="mt-1 max-w-2xl text-sm text-gray-500">* 표시는 반드시 입력하셔야 하는 항목입니다.</p>
+                                </div>
+                                <div class="space-y-6 sm:space-y-5">
+                                    <div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-5">
+                                        <label for="email" class="block text-sm font-medium leading-6 text-gray-900 sm:pt-1.5">아이디*</label>
+                                        <div class="mt-2 sm:col-span-2 sm:mt-0">
+                                            <input id="email" name="email" type="email" autocomplete="email"
+                                                class="block w-full max-w-lg rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                        </div>
+                                    </div>
+
+                                    <div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-gray-200 sm:pt-4">
+                                        <label for="last-name" class="block text-sm font-medium leading-6 text-gray-900 sm:pt-1.5">비밀번호*</label>
+                                        <div class="mt-2 sm:col-span-2 sm:mt-0">
+                                            <input type="text" name="last-name" id="last-name" autocomplete="family-name"
+                                                class="block w-full max-w-lg rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
+                                        </div>
+                                    </div>
+                                    <div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-gray-200 sm:pt-4">
+                                        <label for="first-name" class="block text-sm font-medium leading-6 text-gray-900 sm:pt-1.5">비밀번호확인*</label>
+                                        <div class="mt-2 sm:col-span-2 sm:mt-0">
+                                            <input type="text" name="first-name" id="first-name" autocomplete="given-name"
+                                                class="block w-full max-w-lg rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
+                                        </div>
+                                    </div>
+                                    <div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-gray-200 sm:pt-4">
+                                        <label for="email" class="block text-sm font-medium leading-6 text-gray-900 sm:pt-1.5">이메일*</label>
+                                        <div class="mt-2 sm:col-span-2 sm:mt-0">
+                                            <input id="email" name="email" type="email" autocomplete="email"
+                                                class="block w-full max-w-lg rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                            <div class="relative flex items-start mt-2">
+                                                <div class="flex h-6 items-center">
+                                                    <input id="comments" name="comments" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                </div>
+                                                <div class="ml-3 text-sm leading-6">
+                                                    <label for="comments" class="text-gray-500">정보/이벤트 메일 수신 동의</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-gray-200 sm:pt-4">
+                                        <label for="first-name" class="block text-sm font-medium leading-6 text-gray-900 sm:pt-1.5">휴대폰번호*</label>
+                                        <div class="mt-2 sm:col-span-2 sm:mt-0">
+                                            <input type="text" name="first-name" id="first-name" autocomplete="given-name"
+                                                class="block w-full max-w-lg rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
+                                            <div class="relative flex items-start mt-2">
+                                                <div class="flex h-6 items-center">
+                                                    <input id="comments" name="comments" type="checkbox" class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600">
+                                                </div>
+                                                <div class="ml-3 text-sm leading-6">
+                                                    <label for="comments" class="text-gray-500">정보/이벤트 SMS 수신 동의</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-gray-200 sm:pt-4">
+                                        <label for="first-name" class="block text-sm font-medium leading-6 text-gray-900 sm:pt-1.5">전화번호*</label>
+                                        <div class="mt-2 sm:col-span-2 sm:mt-0">
+                                            <input type="text" name="first-name" id="first-name" autocomplete="given-name"
+                                                class="block w-full max-w-lg rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
+                                        </div>
+                                    </div>
+                                    <div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-gray-200 sm:pt-4">
+                                        <label for="street-address" class="block text-sm font-medium leading-6 text-gray-900 sm:pt-1.5">주소*</label>
+                                        <div class="mt-2 sm:col-span-2 sm:mt-0">
+                                            <input type="text" name="street-address" id="street-address" autocomplete="street-address"
+                                                class="block w-full max-w-lg rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="space-y-6 pt-8 sm:space-y-5 sm:pt-10">
+                                <div>
+                                    <h3 class="text-base font-semibold leading-6 text-gray-900">부가정보 입력</h3>
+                                </div>
+                                <div class="space-y-6 sm:space-y-5">
+                                    <div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-t sm:border-gray-200 sm:pt-5">
+                                        <label for="email" class="block text-sm font-medium leading-6 text-gray-900 sm:pt-1.5">상호</label>
+                                        <div class="mt-2 sm:col-span-2 sm:mt-0">
+                                            <input id="email" name="email" type="email" autocomplete="email"
+                                                class="block w-full max-w-lg rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                        </div>
+                                    </div>
+
+                                    <div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-gray-200 sm:pt-4">
+                                        <label for="last-name" class="block text-sm font-medium leading-6 text-gray-900 sm:pt-1.5">사업자번호*</label>
+                                        <div class="mt-2 sm:col-span-2 sm:mt-0">
+                                            <input type="text" name="last-name" id="last-name" autocomplete="family-name"
+                                                class="block w-full max-w-lg rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
+                                        </div>
+                                    </div>
+                                    <div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-gray-200 sm:pt-4">
+                                        <label for="first-name" class="block text-sm font-medium leading-6 text-gray-900 sm:pt-1.5">대표자명</label>
+                                        <div class="mt-2 sm:col-span-2 sm:mt-0">
+                                            <input type="text" name="first-name" id="first-name" autocomplete="given-name"
+                                                class="block w-full max-w-lg rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
+                                        </div>
+                                    </div>
+                                    <div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-gray-200 sm:pt-4">
+                                        <label for="email" class="block text-sm font-medium leading-6 text-gray-900 sm:pt-1.5">업태</label>
+                                        <div class="mt-2 sm:col-span-2 sm:mt-0">
+                                            <input id="email" name="email" type="email" autocomplete="email"
+                                                class="block w-full max-w-lg rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                        </div>
+                                    </div>
+                                    <div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-gray-200 sm:pt-4">
+                                        <label for="email" class="block text-sm font-medium leading-6 text-gray-900 sm:pt-1.5">종목</label>
+                                        <div class="mt-2 sm:col-span-2 sm:mt-0">
+                                            <input id="email" name="email" type="email" autocomplete="email"
+                                                class="block w-full max-w-lg rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                                        </div>
+                                    </div>
+                                    <div class="sm:grid sm:grid-cols-3 sm:items-start sm:gap-4 sm:border-gray-200 sm:pt-4">
+                                        <label for="street-address" class="block text-sm font-medium leading-6 text-gray-900 sm:pt-1.5">사업장 주소</label>
+                                        <div class="mt-2 sm:col-span-2 sm:mt-0">
+                                            <input type="text" name="street-address" id="street-address" autocomplete="street-address"
+                                                class="block w-full max-w-lg rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                    <!-- Image List -->
-                    <div class="mt-6 grid grid-cols-2 gap-x-4 gap-y-16 sm:gap-x-6 md:grid-cols-4 md:gap-y-16 lg:gap-x-8">
-                        <div class="group relative">
-                            <div class="h-56 w-full overflow-hidden rounded-md group-hover:opacity-75 lg:h-72 xl:h-80">
-                                <img src="1.jpg" alt="Hand stitched, orange leather long wallet." class="h-full w-full object-cover object-center">
+                        <div class="pt-5">
+                            <div class="flex justify-end gap-x-3">
+                                <button type="button" class="rounded-md bg-white py-2 px-3 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">취소</button>
+                                <button type="submit"
+                                    class="inline-flex justify-center rounded-md bg-indigo-600 py-2 px-3 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">회원가입</button>
                             </div>
-                            <h3 class="mt-4 text-sm text-gray-700">
-                                <a href="product_detail.html">
-                                    <span class="absolute inset-0"></span>
-                                    Leather Long Wallet
-                                </a>
-                            </h3>
-                            <p class="mt-1 text-sm text-gray-500">Natural</p>
-                            <p class="mt-1 text-sm font-medium text-gray-900">비회원 구매불가</p>
                         </div>
-                        <div class="group relative">
-                            <div class="h-56 w-full overflow-hidden rounded-md group-hover:opacity-75 lg:h-72 xl:h-80">
-                                <img src="2.jfif" alt="Hand stitched, orange leather long wallet." class="h-full w-full object-cover object-center">
-                            </div>
-                            <h3 class="mt-4 text-sm text-gray-700">
-                                <a href="product_detail.html">
-                                    <span class="absolute inset-0"></span>
-                                    Leather Long Wallet
-                                </a>
-                            </h3>
-                            <p class="mt-1 text-sm text-gray-500">Natural</p>
-                            <p class="mt-1 text-sm font-medium text-gray-900">비회원 구매불가</p>
-                        </div>
-                        <div class="group relative">
-                            <div class="h-56 w-full overflow-hidden rounded-md group-hover:opacity-75 lg:h-72 xl:h-80">
-                                <img src="3.jpg" alt="Hand stitched, orange leather long wallet." class="h-full w-full object-cover object-center">
-                            </div>
-                            <h3 class="mt-4 text-sm text-gray-700">
-                                <a href="product_detail.html">
-                                    <span class="absolute inset-0"></span>
-                                    Leather Long Wallet
-                                </a>
-                            </h3>
-                            <p class="mt-1 text-sm text-gray-500">Natural</p>
-                            <p class="mt-1 text-sm font-medium text-gray-900">비회원 구매불가</p>
-                        </div>
-                        <div class="group relative">
-                            <div class="h-56 w-full overflow-hidden rounded-md group-hover:opacity-75 lg:h-72 xl:h-80">
-                                <img src="4.jfif" alt="Hand stitched, orange leather long wallet." class="h-full w-full object-cover object-center">
-                            </div>
-                            <h3 class="mt-4 text-sm text-gray-700">
-                                <a href="product_detail.html">
-                                    <span class="absolute inset-0"></span>
-                                    Leather Long Wallet
-                                </a>
-                            </h3>
-                            <p class="mt-1 text-sm text-gray-500">Natural</p>
-                            <p class="mt-1 text-sm font-medium text-gray-900">비회원 구매불가</p>
-                        </div>
-                        <div class="group relative">
-                            <div class="h-56 w-full overflow-hidden rounded-md group-hover:opacity-75 lg:h-72 xl:h-80">
-                                <img src="5.jfif" alt="Hand stitched, orange leather long wallet." class="h-full w-full object-cover object-center">
-                            </div>
-                            <h3 class="mt-4 text-sm text-gray-700">
-                                <a href="product_detail.html">
-                                    <span class="absolute inset-0"></span>
-                                    Leather Long Wallet
-                                </a>
-                            </h3>
-                            <p class="mt-1 text-sm text-gray-500">Natural</p>
-                            <p class="mt-1 text-sm font-medium text-gray-900">비회원 구매불가</p>
-                        </div>
-                        <div class="group relative">
-                            <div class="h-56 w-full overflow-hidden rounded-md group-hover:opacity-75 lg:h-72 xl:h-80">
-                                <img src="6.jfif" alt="Hand stitched, orange leather long wallet." class="h-full w-full object-cover object-center">
-                            </div>
-                            <h3 class="mt-4 text-sm text-gray-700">
-                                <a href="product_detail.html">
-                                    <span class="absolute inset-0"></span>
-                                    Leather Long Wallet
-                                </a>
-                            </h3>
-                            <p class="mt-1 text-sm text-gray-500">Natural</p>
-                            <p class="mt-1 text-sm font-medium text-gray-900">비회원 구매불가</p>
-                        </div>
-                        <div class="group relative">
-                            <div class="h-56 w-full overflow-hidden rounded-md group-hover:opacity-75 lg:h-72 xl:h-80">
-                                <img src="7.jfif" alt="Hand stitched, orange leather long wallet." class="h-full w-full object-cover object-center">
-                            </div>
-                            <h3 class="mt-4 text-sm text-gray-700">
-                                <a href="product_detail.html">
-                                    <span class="absolute inset-0"></span>
-                                    Leather Long Wallet
-                                </a>
-                            </h3>
-                            <p class="mt-1 text-sm text-gray-500">Natural</p>
-                            <p class="mt-1 text-sm font-medium text-gray-900">비회원 구매불가</p>
-                        </div>
-                        <div class="group relative">
-                            <div class="h-56 w-full overflow-hidden rounded-md group-hover:opacity-75 lg:h-72 xl:h-80">
-                                <img src="8.jfif" alt="Hand stitched, orange leather long wallet." class="h-full w-full object-cover object-center">
-                            </div>
-                            <h3 class="mt-4 text-sm text-gray-700">
-                                <a href="product_detail.html">
-                                    <span class="absolute inset-0"></span>
-                                    Leather Long Wallet
-                                </a>
-                            </h3>
-                            <p class="mt-1 text-sm text-gray-500">Natural</p>
-                            <p class="mt-1 text-sm font-medium text-gray-900">비회원 구매불가</p>
-                        </div>
-
-                        <!-- More products... -->
-                    </div>
+                    </form>
                 </div>
             </section>
 
