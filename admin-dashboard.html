@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="ko" class="h-full bg-white">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.10.5/dist/cdn.min.js"></script>
+</head>
+
+<body class="h-full" style="font-family: 'Noto Sans KR', sans-serif;">
+
+    <style>
+        [x-cloak] {
+            display: none !important;
+        }
+    </style>
+
+    <div class="flex min-h-full flex-col">
+        <header class="shrink-0 bg-gray-900">
+            <div class="mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center">
+                    <a href="#">
+                        <img class="h-8 w-auto rounded-full" src="https://shop-phinf.pstatic.net/20221014_215/1665738031647V5sqA_PNG/66873865461471985_427057859.png?type=m120" alt="Your Company">
+                    </a>
+                    <a href="#">
+                        <h3 class="px-6 text-base font-semibold leading-6 text-white">셀링온관리자센터</h3>
+                    </a>
+                </div>
+                <div class="flex items-center gap-x-8">
+                    <button type="button" class="-m-1.5 p-1.5 rounded-full text-gray-400 hover:text-gray-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                        <span class="sr-only">View notifications</span>
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
+                        </svg>
+                    </button>
+                    <div x-data="{ openUserMenu: false }" class="hidden lg:block relative -m-1.5 p-1.5">
+                        <div>
+                            <button x-on:click="openUserMenu = ! openUserMenu" type="button"
+                                class="flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false"
+                                aria-haspopup="true">
+                                <span class="sr-only">Open user menu</span>
+                                <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                            </button>
+                        </div>
+                        <div x-cloak x-show="openUserMenu" class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical"
+                            aria-labelledby="user-menu-button" tabindex="-1" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100"
+                            x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95">
+                            <!-- Active: "bg-gray-100", Not Active: "" -->
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700 bg-gray-100" role="menuitem" tabindex="-1" id="user-menu-item-0">회원정보</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">서비스정보</a>
+                            <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">로그아웃</a>
+                        </div>
+                    </div>
+                    <div class="hidden lg:block -m-1.5 p-1.5">
+                        <a href="#"
+                            class="inline-flex items-center rounded-md bg-indigo-600 px-3 py-2 text-xs font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">톡톡상담</a>
+                    </div>
+                    <!-- Mobile Menu Button -->
+                    <button type="button" class="lg:hidden -m-2.5 p-2.5 text-gray-400 hover:text-gray-300">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- 2 column wrapper -->
+        <div class="mx-auto w-full grow lg:flex">
+            <!-- Left sidebar -->
+            <div class="flex-1 lg:flex">
+                <div class="border-b border-gray-200 px-4 py-6 sm:px-6 lg:pl-8 lg:w-64 lg:shrink-0 lg:border-r">
+                    <div class="flex grow flex-col gap-y-5 overflow-y-auto">
+                        <div class="hidden lg:block mb-2">
+                            <select id="option" name="option" class="mt-2 block w-full rounded-md border-0 py-1.5 pl-3 pr-10 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-indigo-600 text-sm sm:leading-6">
+                                <option selected>수취인명</option>
+                                <option>구매자명</option>
+                                <option>구매자연락처</option>
+                                <option>구매자ID</option>
+                                <option>주문번호</option>
+                                <option>상품주문번호</option>
+                                <option>상품번호</option>
+                                <option>운송장번호</option>
+                            </select>
+                            <label for="search" class="sr-only">Search</label>
+                            <div class="relative mt-2">
+                                <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                                    <svg class="h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                        <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z" clip-rule="evenodd" />
+                                    </svg>
+                                </div>
+                                <input id="search" name="search"
+                                    class="block w-full rounded-md border-0 bg-white py-1.5 pl-10 pr-3 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 text-sm sm:leading-6"
+                                    placeholder="" type="search">
+                            </div>
+                        </div>
+                        <nav class="flex flex-1 flex-col">
+                            <ul role="list" class="flex flex-1 flex-col gap-y-7">
+                                <li>
+                                    <ul role="list" class="-mx-2 space-y-1">
+                                        <li>
+                                            <!-- Current: "bg-gray-50", Default: "hover:bg-gray-50" -->
+                                            <div>
+                                                <button type="button" class="hover:bg-gray-50 flex items-center w-full text-left rounded-md p-2 gap-x-3 text-sm leading-6 font-semibold text-gray-700" aria-controls="sub-menu-1" aria-expanded="false">
+                                                    <svg class="h-6 w-6 shrink-0 text-gray-400" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" />
+                                                    </svg>
+                                                    상품관리
+                                                    <!-- Expanded: "rotate-90 text-gray-500", Collapsed: "text-gray-400" -->
+                                                    <svg class="text-gray-400 ml-auto h-5 w-5 shrink-0" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                                        <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" />
+                                                    </svg>
+                                                </button>
+                                                <!-- Expandable link section, show/hide based on state. -->
+                                                <ul class="mt-1 px-2" id="sub-menu-1">
+                                                    <li>
+                                                        <a href="#" class="hover:bg-gray-50 block rounded-md py-2 pr-2 pl-9 text-sm leading-6 text-gray-700">상품 조회/수정</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="hover:bg-gray-50 block rounded-md py-2 pr-2 pl-9 text-sm leading-6 text-gray-700">상품 등록</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="hover:bg-gray-50 block rounded-md py-2 pr-2 pl-9 text-sm leading-6 text-gray-700">상품 일괄등록</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="hover:bg-gray-50 block rounded-md py-2 pr-2 pl-9 text-sm leading-6 text-gray-700">연관상품 관리</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="hover:bg-gray-50 block rounded-md py-2 pr-2 pl-9 text-sm leading-6 text-gray-700">사진 보관함</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="hover:bg-gray-50 block rounded-md py-2 pr-2 pl-9 text-sm leading-6 text-gray-700">배송정보 관리</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="hover:bg-gray-50 block rounded-md py-2 pr-2 pl-9 text-sm leading-6 text-gray-700">템플릿 관리</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="hover:bg-gray-50 block rounded-md py-2 pr-2 pl-9 text-sm leading-6 text-gray-700">공지사항 관리</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="hover:bg-gray-50 block rounded-md py-2 pr-2 pl-9 text-sm leading-6 text-gray-700">구독 관리</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <button type="button" class="hover:bg-gray-50 flex items-center w-full text-left rounded-md p-2 gap-x-3 text-sm leading-6 font-semibold text-gray-700" aria-controls="sub-menu-1" aria-expanded="false">
+                                                    <svg class="h-6 w-6 shrink-0 text-gray-400" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
+                                                    </svg>
+                                                    Teams
+                                                    <!-- Expanded: "rotate-90 text-gray-500", Collapsed: "text-gray-400" -->
+                                                    <svg class="text-gray-400 ml-auto h-5 w-5 shrink-0" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                                        <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" />
+                                                    </svg>
+                                                </button>
+                                                <!-- Expandable link section, show/hide based on state. -->
+                                                <ul class="mt-1 px-2" id="sub-menu-1">
+                                                    <li>
+                                                        <!-- 44px -->
+                                                        <a href="#" class="hover:bg-gray-50 block rounded-md py-2 pr-2 pl-9 text-sm leading-6 text-gray-700">Engineering</a>
+                                                    </li>
+                                                    <li>
+                                                        <!-- 44px -->
+                                                        <a href="#" class="hover:bg-gray-50 block rounded-md py-2 pr-2 pl-9 text-sm leading-6 text-gray-700">Human Resources</a>
+                                                    </li>
+                                                    <li>
+                                                        <!-- 44px -->
+                                                        <a href="#" class="hover:bg-gray-50 block rounded-md py-2 pr-2 pl-9 text-sm leading-6 text-gray-700">Customer Success</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div>
+                                                <button type="button" class="hover:bg-gray-50 flex items-center w-full text-left rounded-md p-2 gap-x-3 text-sm leading-6 font-semibold text-gray-700" aria-controls="sub-menu-2" aria-expanded="false">
+                                                    <svg class="h-6 w-6 shrink-0 text-gray-400" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            d="M2.25 12.75V12A2.25 2.25 0 014.5 9.75h15A2.25 2.25 0 0121.75 12v.75m-8.69-6.44l-2.12-2.12a1.5 1.5 0 00-1.061-.44H4.5A2.25 2.25 0 002.25 6v12a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9a2.25 2.25 0 00-2.25-2.25h-5.379a1.5 1.5 0 01-1.06-.44z" />
+                                                    </svg>
+                                                    Projects
+                                                    <!-- Expanded: "rotate-90 text-gray-500", Collapsed: "text-gray-400" -->
+                                                    <svg class="text-gray-400 ml-auto h-5 w-5 shrink-0" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                                        <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" />
+                                                    </svg>
+                                                </button>
+                                                <!-- Expandable link section, show/hide based on state. -->
+                                                <ul class="mt-1 px-2" id="sub-menu-2">
+                                                    <li>
+                                                        <!-- 44px -->
+                                                        <a href="#" class="hover:bg-gray-50 block rounded-md py-2 pr-2 pl-9 text-sm leading-6 text-gray-700">GraphQL API</a>
+                                                    </li>
+                                                    <li>
+                                                        <!-- 44px -->
+                                                        <a href="#" class="hover:bg-gray-50 block rounded-md py-2 pr-2 pl-9 text-sm leading-6 text-gray-700">iOS App</a>
+                                                    </li>
+                                                    <li>
+                                                        <!-- 44px -->
+                                                        <a href="#" class="hover:bg-gray-50 block rounded-md py-2 pr-2 pl-9 text-sm leading-6 text-gray-700">Android App</a>
+                                                    </li>
+                                                    <li>
+                                                        <!-- 44px -->
+                                                        <a href="#" class="hover:bg-gray-50 block rounded-md py-2 pr-2 pl-9 text-sm leading-6 text-gray-700">New Customer Portal</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="hover:bg-gray-50 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold text-gray-700">
+                                                <svg class="h-6 w-6 shrink-0 text-gray-400" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
+                                                </svg>
+                                                Calendar
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="hover:bg-gray-50 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold text-gray-700">
+                                                <svg class="h-6 w-6 shrink-0 text-gray-400" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                                        d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 01-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 011.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 00-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 01-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5a3.375 3.375 0 00-3.375-3.375H9.75" />
+                                                </svg>
+                                                Documents
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="hover:bg-gray-50 group flex gap-x-3 rounded-md p-2 text-sm leading-6 font-semibold text-gray-700">
+                                                <svg class="h-6 w-6 shrink-0 text-gray-400" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6a7.5 7.5 0 107.5 7.5h-7.5V6z" />
+                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5H21A7.5 7.5 0 0013.5 3v7.5z" />
+                                                </svg>
+                                                Reports
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="-mx-6 mt-auto">
+                                    <a href="#" class="flex items-center gap-x-4 px-6 py-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-50">
+                                        <img class="h-8 w-8 rounded-full bg-gray-50" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                            alt="">
+                                        <span class="sr-only">Your profile</span>
+                                        <span aria-hidden="true">Tom Cook</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <!-- Main wrapper -->
+            <div class="shrink-0 border-t border-gray-200 px-4 py-6 sm:px-6 lg:w-full">
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+</body>
+
+</html>
