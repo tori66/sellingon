@@ -31,14 +31,14 @@
     <div class="wrap">
         <div class="seller-wrap pc">
             <div class="seller-inner-wrap">
-                
+
                 <header class="navbar navbar-inverse seller-navbar" role="navigation">
                     <div id="_gnb_nav" class="inner-nav">
                         <div class="navbar-header">
                             <ul class="navbar-logo-pc">
                                 <li>
-                                    <a class="-mt-1">
-                                        <span class="text-lg text-green-500 font-black">SELLINGON</span>    
+                                    <a class="">
+                                        <span class="text-lg text-green-500 font-black">SELLINGON</span>
                                         <h1 class="sr-only">셀링온</h1>
                                         <!-- <img class="h-4 w-auto"
                                             src="https://shop-phinf.pstatic.net/20221014_94/1665737489498slK3l_PNG/%B8%F0%B9%D9%C0%CF-%BA%A3%B3%CA%BF%EB-%B7%CE%B0%ED.png?type=w640"
@@ -65,9 +65,9 @@
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="txt w-6 h-6 inline-block"
                                                 :class="familySite ? 'rotate-180' : ''">
                                                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                                            </svg>                                              
+                                            </svg>
                                         </a>
-                                        <ul x-cloak x-show="familySite" class="dropdown-menu block">
+                                        <ul x-cloak x-show="familySite" x-on:click.outside="familySite = false" class="dropdown-menu block">
                                             <li><a href="#" target="_blank">사이트1</a></li>
                                             <li><a href="#" target="_blank">사이트2</a></li>
                                         </ul>
@@ -75,19 +75,19 @@
                                 </li>
                                 <li>
                                     <div x-data="{ partnerSite: false }" class="dropdown" id="NavbarDropdown">
-                                        <a x-on:click="partnerSite = ! partnerSite"role="button">
+                                        <a x-on:click="partnerSite = ! partnerSite" role="button">
                                             <span class="txt">제휴사이트</span>
                                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="txt w-6 h-6 inline-block"
-                                                :class="familySite ? 'rotate-180' : ''">
+                                                :class="partnerSite ? 'rotate-180' : ''">
                                                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                                            </svg>                                              
+                                            </svg>
                                         </a>
-                                        <ul x-cloak x-show="partnerSite" class="dropdown-menu block">
+                                        <ul x-cloak x-show="partnerSite" x-on:click.outside="partnerSite = false" class="dropdown-menu block">
                                             <li><a href="#" target="_blank">사이트1</a></li>
                                             <li><a href="#" target="_blank">사이트2</a></li>
                                         </ul>
                                     </div>
-                                </li>                                
+                                </li>
                             </ul>
                         </div>
                         <ul class="nav navbar-nav nav-pull-right">
@@ -106,11 +106,11 @@
                                             d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
                                     </svg>
                                     <span class="sr-only">알림보기</span>
-                                </a>                                
-                                <div class="popover bottom fade in" :class="notificationView ? 'block' : ''" 
+                                </a>
+                                <div class="popover bottom fade in" :class="notificationView ? 'block' : ''"
                                     style="top: 54px; left: -182px; left: auto; right: 50%; top: auto; width: 402px; padding: 0; border: 0; margin: -5px -85px 0 0;">
                                     <div class="popover-inner">
-                                        <div class="popover-content">                                               
+                                        <div class="popover-content">
                                             <div class="text-default">
                                                 <div class="seller-alarm-wrap">
                                                     <div class="seller-alarm-header">
@@ -144,10 +144,10 @@
                                                         </a>
                                                     </div>
                                                 </div>
-                                            </div>                                                
+                                            </div>
                                         </div>
                                     </div>
-                                </div>                                
+                                </div>
                             </li>
                             <li>
                                 <a href="#">로그아웃</a>
@@ -173,7 +173,7 @@
                         </div>
                     </div>
                 </header>
-                
+
                 <nav id="seller-lnb" class="nav navbar-nav seller-side-nav">
                     <a href="#" role="button" class="navbar navbar-hide">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5 mx-auto my-7">
@@ -199,7 +199,7 @@
                                             <input type="text" autocomplete="off" tabindex="0" readonly=""
                                                 style="width: 4px; opacity: 0; position: absolute; left: -10000px;">
                                         </div>
-                                        <div x-cloak x-show="lnbOrderSearchForm" class="selectize-dropdown single ng-pristine ng-untouched ng-valid"
+                                        <div x-cloak x-show="lnbOrderSearchForm" x-on:click.outside="lnbOrderSearchForm = false" class="selectize-dropdown single ng-pristine ng-untouched ng-valid"
                                             style="width: 160px; top: 30px; left: 0px;">
                                             <div class="selectize-dropdown-content">
                                                 <div data-value="COLLECTOR_NAME" class="option selected active px-3">
@@ -221,14 +221,14 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <input placeholder="전체주문조회" 
+                                    <input placeholder="전체주문조회"
                                         class="ng-pristine ng-untouched ng-valid selectized ng-valid-required ng-not-empty"
                                         style="width: 4px; opacity: 0; position: absolute; left: -10000px;">
                                     <div class="seller-input-wrap">
                                         <input type="text" title="주문조회 입력"
                                             class="ng-pristine ng-untouched ng-empty ng-valid ng-valid-regex-pattern-custom">
                                         <a href="#" role="button" class="btn-search">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mt-1">
                                                 <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
                                             </svg>
                                             <span class="sr-only">검색하기</span>
@@ -237,16 +237,19 @@
                                     <div class="_order_search_form_error_msg"></div>
                                 </form>
                             </div>
-                            <ul x-data="{ product: false, selling: false, calculation: false,  }" role="menu" class="metisMenu">
+                            <ul x-data="{ product: false, selling: false, adjustment: false, review: false, talk: false,
+                                exhibit: false, exposure: false, benefit: false, marketing: false, commerce:false,
+                                analysis: false, deal:false, support: false, information: false, patent: false,
+                                distribution: false, notice: false }" role="menu" class="metisMenu">
                                 <li>
                                     <a x-on:click="product = ! product" role="menuitem" aria-expanded="false">
                                         상품관리
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5 inline-block text-gray-400 float-right mt-1.5" 
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 inline-block text-gray-400 float-right mt-2"
                                         :class="product ? 'rotate-180' : ''">
-                                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                                         </svg>
                                     </a>
-                                    <ul x-cloak x-show="product" aria-expanded="false" class="submenu in">
+                                    <ul x-cloak x-show="product" x-on:click.outside="product = false" aria-expanded="false" class="submenu in">
                                         <li>
                                             <a href="#">상품 조회/수정</a>
                                         </li>
@@ -274,742 +277,461 @@
                                         <li>
                                             <a href="#">구독 관리
                                                 <span class="sr-only">new</span>
+                                                <span class="inline-block h-2 w-2 ml-1 -translate-y-1/2 translate-x-1/2 transform rounded-full bg-red-400"></span>
                                             </a>
                                         </li>
                                     </ul>
                                 </li>
-                                <li ng-repeat="menu1d in ::vm.lnbMenus track by $index"><a role="menuitem"
-                                        aria-expanded="false" href="https://sell.smartstore.naver.com/"
-                                        ng-click="vm.menuClickLogging(menu1d.name, $event)">판매관리 <!----><i
-                                            class="seller-icon icon-npay" aria-label="네이버페이"
-                                            ng-if="::menu1d.provider === &#39;NAVERPAY&#39;"></i><!----> <!---->
-                                        <!----> <!----></a>
-                                    <ul aria-expanded="false" class="submenu collapse"><!---->
-                                        <li ng-repeat="menu2d in ::menu1d.children track by $index"
-                                            ng-class="{&#39;selected&#39;: vm.currentMenu2d.state === menu2d.state}">
-                                            <!----><a ng-if="::menu2d.method !== &#39;NEW_LAYER&#39;"
-                                                href="https://sell.smartstore.naver.com/#/naverpay/manage/order"
-                                                ui-sref="main.naverpay_manage_order"
-                                                ui-sref-opts="{&quot;reload&quot;:&quot;main.naverpay_manage_order&quot;,&quot;inherit&quot;:false}"
-                                                ng-click="vm.menuClickLogging(menu1d.name + &#39;|&#39; + menu2d.name)">주문통합검색
-                                                <!----> <!----> <!----> <!----> </a><!----><!----></li><!---->
-                                        <li ng-repeat="menu2d in ::menu1d.children track by $index"
-                                            ng-class="{&#39;selected&#39;: vm.currentMenu2d.state === menu2d.state}">
-                                            <!----><a ng-if="::menu2d.method !== &#39;NEW_LAYER&#39;"
-                                                href="https://sell.smartstore.naver.com/#/naverpay/sale/noaddress"
-                                                ui-sref="main.naverpay_noaddress"
-                                                ui-sref-opts="{&quot;reload&quot;:&quot;main.naverpay_noaddress&quot;,&quot;inherit&quot;:false}"
-                                                ng-click="vm.menuClickLogging(menu1d.name + &#39;|&#39; + menu2d.name)">선물
-                                                수락대기 <!----> <!----> <!----> <!----> </a><!----><!----></li><!---->
-                                        <li ng-repeat="menu2d in ::menu1d.children track by $index"
-                                            ng-class="{&#39;selected&#39;: vm.currentMenu2d.state === menu2d.state}">
-                                            <!----><a ng-if="::menu2d.method !== &#39;NEW_LAYER&#39;"
-                                                href="https://sell.smartstore.naver.com/#/naverpay/sale/unpayment"
-                                                ui-sref="main.naverpay_sale_unpayment"
-                                                ui-sref-opts="{&quot;reload&quot;:&quot;main.naverpay_sale_unpayment&quot;,&quot;inherit&quot;:false}"
-                                                ng-click="vm.menuClickLogging(menu1d.name + &#39;|&#39; + menu2d.name)">미결제
-                                                확인 <!----> <!----> <!----> <!----> </a><!----><!----></li><!---->
-                                        <li ng-repeat="menu2d in ::menu1d.children track by $index"
-                                            ng-class="{&#39;selected&#39;: vm.currentMenu2d.state === menu2d.state}">
-                                            <!----><a ng-if="::menu2d.method !== &#39;NEW_LAYER&#39;"
-                                                href="https://sell.smartstore.naver.com/#/naverpay/sale/delivery"
-                                                ui-sref="main.naverpay_sale_delivery"
-                                                ui-sref-opts="{&quot;reload&quot;:&quot;main.naverpay_sale_delivery&quot;,&quot;inherit&quot;:false}"
-                                                ng-click="vm.menuClickLogging(menu1d.name + &#39;|&#39; + menu2d.name)">발주(주문)확인/발송관리
-                                                <!----> <!----> <!----> <!----> </a><!----><!----></li><!---->
-                                        <li ng-repeat="menu2d in ::menu1d.children track by $index"
-                                            ng-class="{&#39;selected&#39;: vm.currentMenu2d.state === menu2d.state}">
-                                            <!----><a ng-if="::menu2d.method !== &#39;NEW_LAYER&#39;"
-                                                href="https://sell.smartstore.naver.com/#/naverpay/sale/delivery/situation"
-                                                ui-sref="main.naverpay_sale_delivery_situation"
-                                                ui-sref-opts="{&quot;reload&quot;:&quot;main.naverpay_sale_delivery_situation&quot;,&quot;inherit&quot;:false}"
-                                                ng-click="vm.menuClickLogging(menu1d.name + &#39;|&#39; + menu2d.name)">배송현황
-                                                관리 <!----> <!----> <!----> <!----> </a><!----><!----></li><!---->
-                                        <li ng-repeat="menu2d in ::menu1d.children track by $index"
-                                            ng-class="{&#39;selected&#39;: vm.currentMenu2d.state === menu2d.state}">
-                                            <!----><a ng-if="::menu2d.method !== &#39;NEW_LAYER&#39;"
-                                                href="https://sell.smartstore.naver.com/#/naverpay/sale/purchaseDecision"
-                                                ui-sref="main.naverpay_sale_purchaseDecision"
-                                                ui-sref-opts="{&quot;reload&quot;:&quot;main.naverpay_sale_purchaseDecision&quot;,&quot;inherit&quot;:false}"
-                                                ng-click="vm.menuClickLogging(menu1d.name + &#39;|&#39; + menu2d.name)">구매확정
-                                                내역 <!----> <!----> <!----> <!----> </a><!----><!----></li><!---->
-                                        <li ng-repeat="menu2d in ::menu1d.children track by $index"
-                                            ng-class="{&#39;selected&#39;: vm.currentMenu2d.state === menu2d.state}">
-                                            <!----><a ng-if="::menu2d.method !== &#39;NEW_LAYER&#39;"
-                                                href="https://sell.smartstore.naver.com/#/naverpay/claim/cancel"
-                                                ui-sref="main.naverpay_claim_cancel"
-                                                ui-sref-opts="{&quot;reload&quot;:&quot;main.naverpay_claim_cancel&quot;,&quot;inherit&quot;:false}"
-                                                ng-click="vm.menuClickLogging(menu1d.name + &#39;|&#39; + menu2d.name)">취소
-                                                관리 <!----> <!----> <!----> <!----> </a><!----><!----></li><!---->
-                                        <li ng-repeat="menu2d in ::menu1d.children track by $index"
-                                            ng-class="{&#39;selected&#39;: vm.currentMenu2d.state === menu2d.state}">
-                                            <!----><a ng-if="::menu2d.method !== &#39;NEW_LAYER&#39;"
-                                                href="https://sell.smartstore.naver.com/#/naverpay/claim/return"
-                                                ui-sref="main.naverpay_claim_return"
-                                                ui-sref-opts="{&quot;reload&quot;:&quot;main.naverpay_claim_return&quot;,&quot;inherit&quot;:false}"
-                                                ng-click="vm.menuClickLogging(menu1d.name + &#39;|&#39; + menu2d.name)">반품
-                                                관리 <!----> <!----> <!----> <!----> </a><!----><!----></li><!---->
-                                        <li ng-repeat="menu2d in ::menu1d.children track by $index"
-                                            ng-class="{&#39;selected&#39;: vm.currentMenu2d.state === menu2d.state}">
-                                            <!----><a ng-if="::menu2d.method !== &#39;NEW_LAYER&#39;"
-                                                href="https://sell.smartstore.naver.com/#/naverpay/claim/exchange"
-                                                ui-sref="main.naverpay_claim_exchange"
-                                                ui-sref-opts="{&quot;reload&quot;:&quot;main.naverpay_claim_exchange&quot;,&quot;inherit&quot;:false}"
-                                                ng-click="vm.menuClickLogging(menu1d.name + &#39;|&#39; + menu2d.name)">교환
-                                                관리 <!----> <!----> <!----> <!----> </a><!----><!----></li><!---->
-                                        <li ng-repeat="menu2d in ::menu1d.children track by $index"
-                                            ng-class="{&#39;selected&#39;: vm.currentMenu2d.state === menu2d.state}">
-                                            <!----><a ng-if="::menu2d.method !== &#39;NEW_LAYER&#39;"
-                                                href="https://sell.smartstore.naver.com/#/naverpay/blackConsumer"
-                                                ui-sref="main.naverpay_blackConsumer"
-                                                ui-sref-opts="{&quot;reload&quot;:&quot;main.naverpay_blackConsumer&quot;,&quot;inherit&quot;:false}"
-                                                ng-click="vm.menuClickLogging(menu1d.name + &#39;|&#39; + menu2d.name)">판매방해
-                                                고객관리 <!----> <!----> <!----> <!----> </a><!----><!----></li><!---->
-                                        <li ng-repeat="menu2d in ::menu1d.children track by $index"
-                                            ng-class="{&#39;selected&#39;: vm.currentMenu2d.state === menu2d.state}">
-                                            <!----><a ng-if="::menu2d.method !== &#39;NEW_LAYER&#39;"
-                                                href="https://sell.smartstore.naver.com/#/naverpay/return-care/management"
-                                                ui-sref="main.naverpay_return_care_management"
-                                                ui-sref-opts="{&quot;reload&quot;:&quot;main.naverpay_return_care_management&quot;,&quot;inherit&quot;:false}"
-                                                ng-click="vm.menuClickLogging(menu1d.name + &#39;|&#39; + menu2d.name)">반품안심케어
-                                                <!----> <!----> <!----><i class="icon-dot" aria-hidden="true"
-                                                    ng-if="::menu2d.isNewMenu"></i><!----> <!----><span
-                                                    class="sr-only" ng-if="::menu2d.isNewMenu">new</span><!---->
-                                            </a><!----><!----></li><!---->
+                                <li>
+                                    <a x-on:click="selling = ! selling" role="menuitem" aria-expanded="false">
+                                        판매관리
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 inline-block text-gray-400 float-right mt-2"
+                                        :class="selling ? 'rotate-180' : ''">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                                        </svg>
+                                    </a>
+                                    <ul x-cloak x-show="selling" x-on:click.outside="selling = false" aria-expanded="false" class="submenu in">
+                                        <li>
+                                            <a href="#">주문통합검색</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">선물 수락대기</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">미결제 확인</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">발주(주문)확인/발송관리</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">배송현황 관리</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">배송정보 관리</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">구매확정 내역</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">취소 관리</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">반품 관리</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">교환 관리</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">판매방해 고객관리</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">반품안심케어
+                                                <span class="sr-only">new</span>
+                                                <span class="inline-block h-2 w-2 ml-1 -translate-y-1/2 translate-x-1/2 transform rounded-full bg-red-400"></span>
+                                            </a>
+                                        </li>
                                     </ul>
-                                </li><!---->
-                                <li ng-repeat="menu1d in ::vm.lnbMenus track by $index"><a role="menuitem"
-                                        aria-expanded="false" href="https://sell.smartstore.naver.com/"
-                                        ng-click="vm.menuClickLogging(menu1d.name, $event)">정산관리 <!----><i
-                                            class="seller-icon icon-npay" aria-label="네이버페이"
-                                            ng-if="::menu1d.provider === &#39;NAVERPAY&#39;"></i><!----> <!---->
-                                        <!----> <!----></a>
-                                    <ul aria-expanded="false" class="submenu collapse"><!---->
-                                        <li ng-repeat="menu2d in ::menu1d.children track by $index"
-                                            ng-class="{&#39;selected&#39;: vm.currentMenu2d.state === menu2d.state}">
-                                            <!----><a ng-if="::menu2d.method !== &#39;NEW_LAYER&#39;"
-                                                href="https://sell.smartstore.naver.com/#/naverpay/settlemgt/sellerdailysettle"
-                                                ui-sref="main.naverpay_settlemgt_sellerdailysettle"
-                                                ui-sref-opts="{&quot;reload&quot;:&quot;main.naverpay_settlemgt_sellerdailysettle&quot;,&quot;inherit&quot;:false}"
-                                                ng-click="vm.menuClickLogging(menu1d.name + &#39;|&#39; + menu2d.name)">정산
-                                                내역 (일별/건별) <!----> <!----> <!----> <!----> </a><!----><!----></li>
-                                        <!---->
-                                        <li ng-repeat="menu2d in ::menu1d.children track by $index"
-                                            ng-class="{&#39;selected&#39;: vm.currentMenu2d.state === menu2d.state}">
-                                            <!----><a ng-if="::menu2d.method !== &#39;NEW_LAYER&#39;"
-                                                href="https://sell.smartstore.naver.com/#/naverpay/settlemgt/paysettle"
-                                                ui-sref="main.naverpay_settlemgt_paysettle"
-                                                ui-sref-opts="{&quot;reload&quot;:&quot;main.naverpay_settlemgt_paysettle&quot;,&quot;inherit&quot;:false}"
-                                                ng-click="vm.menuClickLogging(menu1d.name + &#39;|&#39; + menu2d.name)">항목별
-                                                정산 내역 <!----> <!----> <!----> <!----> </a><!----><!----></li><!---->
-                                        <li ng-repeat="menu2d in ::menu1d.children track by $index"
-                                            ng-class="{&#39;selected&#39;: vm.currentMenu2d.state === menu2d.state}">
-                                            <!----><a ng-if="::menu2d.method !== &#39;NEW_LAYER&#39;"
-                                                href="https://sell.smartstore.naver.com/#/naverpay/quicksettle"
-                                                ui-sref="main.naverpay_settlemgt_quicksettle"
-                                                ui-sref-opts="{&quot;reload&quot;:&quot;main.naverpay_settlemgt_quicksettle&quot;,&quot;inherit&quot;:false}"
-                                                ng-click="vm.menuClickLogging(menu1d.name + &#39;|&#39; + menu2d.name)">빠른정산
-                                                <!----> <!----> <!----> <!----> </a><!----><!----></li><!---->
-                                        <li ng-repeat="menu2d in ::menu1d.children track by $index"
-                                            ng-class="{&#39;selected&#39;: vm.currentMenu2d.state === menu2d.state}">
-                                            <!----><a ng-if="::menu2d.method !== &#39;NEW_LAYER&#39;"
-                                                href="https://sell.smartstore.naver.com/#/naverpay/settlemgt/vatdeclaration"
-                                                ui-sref="main.naverpay_settlemgt_vatdeclaration"
-                                                ui-sref-opts="{&quot;reload&quot;:&quot;main.naverpay_settlemgt_vatdeclaration&quot;,&quot;inherit&quot;:false}"
-                                                ng-click="vm.menuClickLogging(menu1d.name + &#39;|&#39; + menu2d.name)">부가세신고
-                                                내역 <!----> <!----> <!----> <!----> </a><!----><!----></li><!---->
-                                        <li ng-repeat="menu2d in ::menu1d.children track by $index"
-                                            ng-class="{&#39;selected&#39;: vm.currentMenu2d.state === menu2d.state}">
-                                            <!----><a ng-if="::menu2d.method !== &#39;NEW_LAYER&#39;"
-                                                href="https://sell.smartstore.naver.com/#/naverpay/taxinvoice"
-                                                ui-sref="main.naverpay_settlemgt_taxinvoice"
-                                                ui-sref-opts="{&quot;reload&quot;:&quot;main.naverpay_settlemgt_taxinvoice&quot;,&quot;inherit&quot;:false}"
-                                                ng-click="vm.menuClickLogging(menu1d.name + &#39;|&#39; + menu2d.name)">세금계산서
-                                                조회 <!----> <!----> <!----> <!----> </a><!----><!----></li><!---->
-                                        <li ng-repeat="menu2d in ::menu1d.children track by $index"
-                                            ng-class="{&#39;selected&#39;: vm.currentMenu2d.state === menu2d.state}">
-                                            <!----><a ng-if="::menu2d.method !== &#39;NEW_LAYER&#39;"
-                                                href="https://sell.smartstore.naver.com/#/naverpay/charge"
-                                                ui-sref="main.naverpay_charge"
-                                                ui-sref-opts="{&quot;reload&quot;:&quot;main.naverpay_charge&quot;,&quot;inherit&quot;:false}"
-                                                ng-click="vm.menuClickLogging(menu1d.name + &#39;|&#39; + menu2d.name)">비즈월렛
-                                                관리 (충전금) <!----> <!----> <!----><i class="icon-dot"
-                                                    aria-hidden="true" ng-if="::menu2d.isNewMenu"></i><!---->
-                                                <!----><span class="sr-only"
-                                                    ng-if="::menu2d.isNewMenu">new</span><!----> </a><!----><!---->
-                                        </li><!---->
-                                        <li ng-repeat="menu2d in ::menu1d.children track by $index"
-                                            ng-class="{&#39;selected&#39;: vm.currentMenu2d.state === menu2d.state}">
-                                            <!----><a ng-if="::menu2d.method !== &#39;NEW_LAYER&#39;"
-                                                href="https://sell.smartstore.naver.com/#/naverpay/settlemgt/newcomerguide"
-                                                ui-sref="main.naverpay_settlemgt_newcomerguide"
-                                                ui-sref-opts="{&quot;reload&quot;:&quot;main.naverpay_settlemgt_newcomerguide&quot;,&quot;inherit&quot;:false}"
-                                                ng-click="vm.menuClickLogging(menu1d.name + &#39;|&#39; + menu2d.name)">초보판매자
-                                                정산가이드 <!----> <!----> <!----><i class="icon-dot" aria-hidden="true"
-                                                    ng-if="::menu2d.isNewMenu"></i><!----> <!----><span
-                                                    class="sr-only" ng-if="::menu2d.isNewMenu">new</span><!---->
-                                            </a><!----><!----></li><!---->
-                                        <li ng-repeat="menu2d in ::menu1d.children track by $index"
-                                            ng-class="{&#39;selected&#39;: vm.currentMenu2d.state === menu2d.state}">
-                                            <!----><a ng-if="::menu2d.method !== &#39;NEW_LAYER&#39;"
-                                                href="https://sell.smartstore.naver.com/#/naverpay/settlemgt/preferentialfeerefund"
-                                                ui-sref="main.naverpay_settlemgt_preferentialfee_refund"
-                                                ui-sref-opts="{&quot;reload&quot;:&quot;main.naverpay_settlemgt_preferentialfee_refund&quot;,&quot;inherit&quot;:false}"
-                                                ng-click="vm.menuClickLogging(menu1d.name + &#39;|&#39; + menu2d.name)">우대수수료
-                                                환급내역 <!----> <!----> <!----><i class="icon-dot" aria-hidden="true"
-                                                    ng-if="::menu2d.isNewMenu"></i><!----> <!----><span
-                                                    class="sr-only" ng-if="::menu2d.isNewMenu">new</span><!---->
-                                            </a><!----><!----></li><!---->
+                                </li>
+                                <li>
+                                    <a x-on:click="adjustment = ! adjustment" role="menuitem" aria-expanded="false">
+                                        정산관리
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 inline-block text-gray-400 float-right mt-2"
+                                        :class="adjustment ? 'rotate-180' : ''">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                                        </svg>
+                                    </a>
+                                    <ul x-cloak x-show="adjustment" x-on:click.outside="adjustment = false" aria-expanded="false" class="submenu in">
+                                        <li>
+                                            <a href="#">정산 내역(일별/건별)</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">항목별 정산 내역</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">빠른정산</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">부가세신고 내역</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">세금계산서 조회</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">배송정보 관리</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">비즈월렛 관리 (충전금)
+                                                <span class="sr-only">new</span>
+                                                <span class="inline-block h-2 w-2 ml-1 -translate-y-1/2 translate-x-1/2 transform rounded-full bg-red-400"></span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">초보판매자 정산가이드
+                                                <span class="sr-only">new</span>
+                                                <span class="inline-block h-2 w-2 ml-1 -translate-y-1/2 translate-x-1/2 transform rounded-full bg-red-400"></span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">우대수수료 환급내역
+                                                <span class="sr-only">new</span>
+                                                <span class="inline-block h-2 w-2 ml-1 -translate-y-1/2 translate-x-1/2 transform rounded-full bg-red-400"></span>
+                                            </a>
+                                        </li>
                                     </ul>
-                                </li><!---->
-                                <li ng-repeat="menu1d in ::vm.lnbMenus track by $index"><a role="menuitem"
-                                        aria-expanded="false" href="https://sell.smartstore.naver.com/"
-                                        ng-click="vm.menuClickLogging(menu1d.name, $event)">문의/리뷰관리 <!----> <!---->
-                                        <!----> <!----></a>
-                                    <ul aria-expanded="false" class="submenu collapse"><!---->
-                                        <li ng-repeat="menu2d in ::menu1d.children track by $index"
-                                            ng-class="{&#39;selected&#39;: vm.currentMenu2d.state === menu2d.state}">
-                                            <!----><a ng-if="::menu2d.method !== &#39;NEW_LAYER&#39;"
-                                                href="https://sell.smartstore.naver.com/#/comment/"
-                                                ui-sref="main.contents.comment"
-                                                ui-sref-opts="{&quot;reload&quot;:&quot;main.contents.comment&quot;,&quot;inherit&quot;:false}"
-                                                ng-click="vm.menuClickLogging(menu1d.name + &#39;|&#39; + menu2d.name)">문의
-                                                관리 <!----> <!----> <!----> <!----> </a><!----><!----></li><!---->
-                                        <li ng-repeat="menu2d in ::menu1d.children track by $index"
-                                            ng-class="{&#39;selected&#39;: vm.currentMenu2d.state === menu2d.state}">
-                                            <!----><a ng-if="::menu2d.method !== &#39;NEW_LAYER&#39;"
-                                                href="https://sell.smartstore.naver.com/#/naverpay/qnas"
-                                                ui-sref="main.naverpay_qnas"
-                                                ui-sref-opts="{&quot;reload&quot;:&quot;main.naverpay_qnas&quot;,&quot;inherit&quot;:false}"
-                                                ng-click="vm.menuClickLogging(menu1d.name + &#39;|&#39; + menu2d.name)">고객문의
-                                                관리 <!----><i class="seller-icon icon-npay" aria-label="네이버페이"
-                                                    ng-if="::menu2d.provider === &#39;NAVERPAY&#39;"></i><!---->
-                                                <!----> <!----> <!----> </a><!----><!----></li><!---->
-                                        <li ng-repeat="menu2d in ::menu1d.children track by $index"
-                                            ng-class="{&#39;selected&#39;: vm.currentMenu2d.state === menu2d.state}">
-                                            <!----><a ng-if="::menu2d.method !== &#39;NEW_LAYER&#39;"
-                                                href="https://sell.smartstore.naver.com/#/review/search"
-                                                ui-sref="main.contents.review.search"
-                                                ui-sref-opts="{&quot;reload&quot;:&quot;main.contents.review.search&quot;,&quot;inherit&quot;:false}"
-                                                ng-click="vm.menuClickLogging(menu1d.name + &#39;|&#39; + menu2d.name)">리뷰
-                                                관리 <!----> <!----> <!----> <!----> </a><!----><!----></li><!---->
-                                        <li ng-repeat="menu2d in ::menu1d.children track by $index"
-                                            ng-class="{&#39;selected&#39;: vm.currentMenu2d.state === menu2d.state}">
-                                            <!----><a ng-if="::menu2d.method !== &#39;NEW_LAYER&#39;"
-                                                href="https://sell.smartstore.naver.com/#/event/REVIEW_EVENT/search"
-                                                ui-sref="main.event.search"
-                                                ui-sref-opts="{&quot;reload&quot;:&quot;main.event.search&quot;,&quot;inherit&quot;:false}"
-                                                ng-click="vm.menuClickLogging(menu1d.name + &#39;|&#39; + menu2d.name)">리뷰이벤트
-                                                관리 <!----> <!----> <!----> <!----> </a><!----><!----></li><!---->
+                                </li>
+                                <li>
+                                    <a x-on:click="review = ! review" role="menuitem" aria-expanded="false">
+                                        문의/리뷰관리
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 inline-block text-gray-400 float-right mt-2"
+                                        :class="review ? 'rotate-180' : ''">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                                        </svg>
+                                    </a>
+                                    <ul x-cloak x-show="review" x-on:click.outside="review = false" aria-expanded="false" class="submenu in">
+                                        <li>
+                                            <a href="#">문의 관리</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">고객문의 관리</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">리뷰 관리</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">리뷰이벤트 관리</a>
+                                        </li>
                                     </ul>
-                                </li><!---->
-                                <li ng-repeat="menu1d in ::vm.lnbMenus track by $index"><a role="menuitem"
-                                        aria-expanded="false" href="https://sell.smartstore.naver.com/"
-                                        ng-click="vm.menuClickLogging(menu1d.name, $event)">톡톡상담관리 <!----> <!---->
-                                        <!----> <!----><i class="fn fn-talktalk-line" aria-hidden="true"
-                                            ng-if="::menu1d.provider === &#39;TALKTALK&#39;"></i><!----></a>
-                                    <ul aria-expanded="false" class="submenu collapse"><!---->
-                                        <li ng-repeat="menu2d in ::menu1d.children track by $index"
-                                            ng-class="{&#39;selected&#39;: vm.currentMenu2d.state === menu2d.state}">
-                                            <!----><a ng-if="::menu2d.method !== &#39;NEW_LAYER&#39;"
-                                                href="https://sell.smartstore.naver.com/#/talktalk/chat"
-                                                ui-sref="main.talktalk_chat_consult"
-                                                ui-sref-opts="{&quot;reload&quot;:&quot;main.talktalk_chat_consult&quot;,&quot;inherit&quot;:false}"
-                                                ng-click="vm.menuClickLogging(menu1d.name + &#39;|&#39; + menu2d.name)">톡톡
-                                                상담하기 <!----> <!----> <!----> <!----> </a><!----><!----></li><!---->
-                                        <li ng-repeat="menu2d in ::menu1d.children track by $index"
-                                            ng-class="{&#39;selected&#39;: vm.currentMenu2d.state === menu2d.state}">
-                                            <!----><a ng-if="::menu2d.method !== &#39;NEW_LAYER&#39;"
-                                                href="https://sell.smartstore.naver.com/#/talktalk/chatbot"
-                                                ui-sref="main.talktalk_chatbot_conf"
-                                                ui-sref-opts="{&quot;reload&quot;:&quot;main.talktalk_chatbot_conf&quot;,&quot;inherit&quot;:false}"
-                                                ng-click="vm.menuClickLogging(menu1d.name + &#39;|&#39; + menu2d.name)">쇼핑챗봇/AI
-                                                FAQ 설정 <!----> <!----> <!----> <!----> </a><!----><!----></li>
-                                        <!---->
-                                        <li ng-repeat="menu2d in ::menu1d.children track by $index"
-                                            ng-class="{&#39;selected&#39;: vm.currentMenu2d.state === menu2d.state}">
-                                            <!----><a ng-if="::menu2d.method !== &#39;NEW_LAYER&#39;"
-                                                href="https://sell.smartstore.naver.com/#/talktalk/counsel"
-                                                ui-sref="main.talktalk_counsel_stats"
-                                                ui-sref-opts="{&quot;reload&quot;:&quot;main.talktalk_counsel_stats&quot;,&quot;inherit&quot;:false}"
-                                                ng-click="vm.menuClickLogging(menu1d.name + &#39;|&#39; + menu2d.name)">톡톡
-                                                응대분석 <!----> <!----> <!----><i class="icon-dot" aria-hidden="true"
-                                                    ng-if="::menu2d.isNewMenu"></i><!----> <!----><span
-                                                    class="sr-only" ng-if="::menu2d.isNewMenu">new</span><!---->
-                                            </a><!----><!----></li><!---->
+                                </li>
+                                <li>
+                                    <a x-on:click="talk = ! talk" role="menuitem" aria-expanded="false">
+                                        톡톡상담관리
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 inline-block text-white">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.625 9.75a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375m-13.5 3.01c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.184-4.183a1.14 1.14 0 01.778-.332 48.294 48.294 0 005.83-.498c1.585-.233 2.708-1.626 2.708-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" />
+                                        </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 inline-block text-gray-400 float-right mt-2"
+                                        :class="talk ? 'rotate-180' : ''">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                                        </svg>
+                                    </a>
+                                    <ul x-cloak x-show="talk" x-on:click.outside="talk = false" aria-expanded="false" class="submenu in">
+                                        <li>
+                                            <a href="#">톡톡 상담하기</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">쇼핑챗봇/AI FAQ 설정</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">톡톡 응대분석
+                                                <span class="sr-only">new</span>
+                                                <span class="inline-block h-2 w-2 ml-1 -translate-y-1/2 translate-x-1/2 transform rounded-full bg-red-400"></span>
+                                            </a>
+                                        </li>
                                     </ul>
-                                </li><!---->
-                                <li ng-repeat="menu1d in ::vm.lnbMenus track by $index"><a role="menuitem"
-                                        aria-expanded="false" href="https://sell.smartstore.naver.com/"
-                                        ng-click="vm.menuClickLogging(menu1d.name, $event)">스토어 전시관리 <!----> <!---->
-                                        <!----><span class="label label-new label-new-xs" aria-label="new"
-                                            ng-if="::menu1d.isNewMenu">N</span><!----> <!----></a>
-                                    <ul aria-expanded="false" class="submenu collapse"><!---->
-                                        <li ng-repeat="menu2d in ::menu1d.children track by $index"
-                                            ng-class="{&#39;selected&#39;: vm.currentMenu2d.state === menu2d.state}">
-                                            <!----><!----><a ng-if="::menu2d.method === &#39;NEW_LAYER&#39;"
-                                                href="https://sell.smartstore.naver.com/d/v2/home" target="_blank"
-                                                rel="opener"
-                                                ng-click="vm.menuClickLogging(menu1d.name + &#39;|&#39; + menu2d.name)">스마트스토어
-                                                <!----> <!----> <!----> <!----> <i
-                                                    class="fn-booking fn-booking-newlayer text-muted"
-                                                    aria-hidden="true"></i></a><!----></li><!---->
-                                        <li ng-repeat="menu2d in ::menu1d.children track by $index"
-                                            ng-class="{&#39;selected&#39;: vm.currentMenu2d.state === menu2d.state}">
-                                            <!----><a ng-if="::menu2d.method !== &#39;NEW_LAYER&#39;"
-                                                href="https://sell.smartstore.naver.com/#/store/v2/category"
-                                                ui-sref="main.store_category_edit_v2"
-                                                ui-sref-opts="{&quot;reload&quot;:&quot;main.store_category_edit_v2&quot;,&quot;inherit&quot;:false}"
-                                                ng-click="vm.menuClickLogging(menu1d.name + &#39;|&#39; + menu2d.name)">카테고리
-                                                관리 <!----> <!----> <!----> <!----> </a><!----><!----></li><!---->
-                                        <li ng-repeat="menu2d in ::menu1d.children track by $index"
-                                            ng-class="{&#39;selected&#39;: vm.currentMenu2d.state === menu2d.state}">
-                                            <!----><a ng-if="::menu2d.method !== &#39;NEW_LAYER&#39;"
-                                                href="https://sell.smartstore.naver.com/#/story/search"
-                                                ui-sref="main.contents.story.search"
-                                                ui-sref-opts="{&quot;reload&quot;:&quot;main.contents.story.search&quot;,&quot;inherit&quot;:false}"
-                                                ng-click="vm.menuClickLogging(menu1d.name + &#39;|&#39; + menu2d.name)">쇼핑
-                                                스토리 관리 <!----> <!----> <!----> <!----> </a><!----><!----></li>
-                                        <!---->
-                                        <li ng-repeat="menu2d in ::menu1d.children track by $index"
-                                            ng-class="{&#39;selected&#39;: vm.currentMenu2d.state === menu2d.state}">
-                                            <!----><a ng-if="::menu2d.method !== &#39;NEW_LAYER&#39;"
-                                                href="https://sell.smartstore.naver.com/#/selective/bridge"
-                                                ui-sref="main.selective_bridge"
-                                                ui-sref-opts="{&quot;reload&quot;:&quot;main.selective_bridge&quot;,&quot;inherit&quot;:false}"
-                                                ng-click="vm.menuClickLogging(menu1d.name + &#39;|&#39; + menu2d.name)">라이브
-                                                예고 페이지 관리 <!----> <!----> <!----> <!----> </a><!----><!----></li>
-                                        <!---->
-                                        <li ng-repeat="menu2d in ::menu1d.children track by $index"
-                                            ng-class="{&#39;selected&#39;: vm.currentMenu2d.state === menu2d.state}">
-                                            <!----><a ng-if="::menu2d.method !== &#39;NEW_LAYER&#39;"
-                                                href="https://sell.smartstore.naver.com/#/sellers/store/detail/smartstore"
-                                                ui-sref="main.store-info.detail.smartstore"
-                                                ui-sref-opts="{&quot;reload&quot;:&quot;main.store-info.detail.smartstore&quot;,&quot;inherit&quot;:false}"
-                                                ng-click="vm.menuClickLogging(menu1d.name + &#39;|&#39; + menu2d.name)">스토어
-                                                관리 <!----> <!----> <!----> <!----> </a><!----><!----></li><!---->
-                                        <li ng-repeat="menu2d in ::menu1d.children track by $index"
-                                            ng-class="{&#39;selected&#39;: vm.currentMenu2d.state === menu2d.state}">
-                                            <!----><a ng-if="::menu2d.method !== &#39;NEW_LAYER&#39;"
-                                                href="https://sell.smartstore.naver.com/#/clovamd"
-                                                ui-sref="main.clova_md"
-                                                ui-sref-opts="{&quot;reload&quot;:&quot;main.clova_md&quot;,&quot;inherit&quot;:false}"
-                                                ng-click="vm.menuClickLogging(menu1d.name + &#39;|&#39; + menu2d.name)">CLOVA
-                                                MD 상품추천 <!----> <!----> <!----><i class="icon-dot"
-                                                    aria-hidden="true" ng-if="::menu2d.isNewMenu"></i><!---->
-                                                <!----><span class="sr-only"
-                                                    ng-if="::menu2d.isNewMenu">new</span><!----> </a><!----><!---->
-                                        </li><!---->
+                                </li>
+                                <li>
+                                    <a x-on:click="exhibit = ! exhibit" role="menuitem" aria-expanded="false">
+                                        스토어 전시관리
+                                        <span class="label label-new label-new-xs">N</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 inline-block text-gray-400 float-right mt-2"
+                                        :class="exhibit ? 'rotate-180' : ''">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                                        </svg>
+                                    </a>
+                                    <ul x-cloak x-show="exhibit" x-on:click.outside="exhibit = false" aria-expanded="false" class="submenu in">
+                                        <li>
+                                            <a href="#">스마트스토어</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">카테고리 관리</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">쇼핑 스토리 관리</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">라이브 예고 페이지 관리</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">스토어 관리</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">CLOVA MD 상품추천
+                                                <span class="sr-only">new</span>
+                                                <span class="inline-block h-2 w-2 ml-1 -translate-y-1/2 translate-x-1/2 transform rounded-full bg-red-400"></span>
+                                            </a>
+                                        </li>
                                     </ul>
-                                </li><!---->
-                                <li ng-repeat="menu1d in ::vm.lnbMenus track by $index"><a role="menuitem"
-                                        aria-expanded="false" href="https://sell.smartstore.naver.com/"
-                                        ng-click="vm.menuClickLogging(menu1d.name, $event)">노출관리 <!----> <!---->
-                                        <!----> <!----></a>
-                                    <ul aria-expanded="false" class="submenu collapse"><!---->
-                                        <li ng-repeat="menu2d in ::menu1d.children track by $index"
-                                            ng-class="{&#39;selected&#39;: vm.currentMenu2d.state === menu2d.state}">
-                                            <!----><a ng-if="::menu2d.method !== &#39;NEW_LAYER&#39;"
-                                                href="https://sell.smartstore.naver.com/#/store/themeshopping/list"
-                                                ui-sref="main.store_themeshopping_list"
-                                                ui-sref-opts="{&quot;reload&quot;:&quot;main.store_themeshopping_list&quot;,&quot;inherit&quot;:false}"
-                                                ng-click="vm.menuClickLogging(menu1d.name + &#39;|&#39; + menu2d.name)">기획전
-                                                관리 <!----> <!----> <!----> <!----> </a><!----><!----></li><!---->
-                                        <li ng-repeat="menu2d in ::menu1d.children track by $index"
-                                            ng-class="{&#39;selected&#39;: vm.currentMenu2d.state === menu2d.state}">
-                                            <!----><a ng-if="::menu2d.method !== &#39;NEW_LAYER&#39;"
-                                                href="https://sell.smartstore.naver.com/#/naverservices"
-                                                ui-sref="main.myconfig.naverservice"
-                                                ui-sref-opts="{&quot;reload&quot;:&quot;main.myconfig.naverservice&quot;,&quot;inherit&quot;:false}"
-                                                ng-click="vm.menuClickLogging(menu1d.name + &#39;|&#39; + menu2d.name)">노출
-                                                서비스 관리 <!----> <!----> <!----> <!----> </a><!----><!----></li>
-                                        <!---->
+                                </li>
+                                <li>
+                                    <a x-on:click="exposure = ! exposure" role="menuitem" aria-expanded="false">
+                                        노출관리
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 inline-block text-gray-400 float-right mt-2"
+                                        :class="exposure ? 'rotate-180' : ''">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                                        </svg>
+                                    </a>
+                                    <ul x-cloak x-show="exposure" x-on:click.outside="exposure = false" aria-expanded="false" class="submenu in">
+                                        <li>
+                                            <a href="#">기획전 관리</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">노출 서비스 관리</a>
+                                        </li>
                                     </ul>
-                                </li><!---->
-                                <li ng-repeat="menu1d in ::vm.lnbMenus track by $index"><a role="menuitem"
-                                        aria-expanded="false" href="https://sell.smartstore.naver.com/"
-                                        ng-click="vm.menuClickLogging(menu1d.name, $event)">고객혜택관리 <!----> <!---->
-                                        <!----><span class="label label-new label-new-xs" aria-label="new"
-                                            ng-if="::menu1d.isNewMenu">N</span><!----> <!----></a>
-                                    <ul aria-expanded="false" class="submenu collapse"><!---->
-                                        <li ng-repeat="menu2d in ::menu1d.children track by $index"
-                                            ng-class="{&#39;selected&#39;: vm.currentMenu2d.state === menu2d.state}">
-                                            <!----><a ng-if="::menu2d.method !== &#39;NEW_LAYER&#39;"
-                                                href="https://sell.smartstore.naver.com/#/customer-manage/register/"
-                                                ui-sref="main.benefit.customer-manage.register"
-                                                ui-sref-opts="{&quot;reload&quot;:&quot;main.benefit.customer-manage.register&quot;,&quot;inherit&quot;:false}"
-                                                ng-click="vm.menuClickLogging(menu1d.name + &#39;|&#39; + menu2d.name)">혜택
-                                                등록 <!----> <!----> <!----> <!----> </a><!----><!----></li><!---->
-                                        <li ng-repeat="menu2d in ::menu1d.children track by $index"
-                                            ng-class="{&#39;selected&#39;: vm.currentMenu2d.state === menu2d.state}">
-                                            <!----><a ng-if="::menu2d.method !== &#39;NEW_LAYER&#39;"
-                                                href="https://sell.smartstore.naver.com/#/customer-manage/search"
-                                                ui-sref="main.benefit.customer-manage.search"
-                                                ui-sref-opts="{&quot;reload&quot;:&quot;main.benefit.customer-manage.search&quot;,&quot;inherit&quot;:false}"
-                                                ng-click="vm.menuClickLogging(menu1d.name + &#39;|&#39; + menu2d.name)">혜택
-                                                조회/수정 <!----> <!----> <!----> <!----> </a><!----><!----></li><!---->
-                                        <li ng-repeat="menu2d in ::menu1d.children track by $index"
-                                            ng-class="{&#39;selected&#39;: vm.currentMenu2d.state === menu2d.state}">
-                                            <!----><a ng-if="::menu2d.method !== &#39;NEW_LAYER&#39;"
-                                                href="https://sell.smartstore.naver.com/#/benefit-stats/search"
-                                                ui-sref="main.benefit-stats.search"
-                                                ui-sref-opts="{&quot;reload&quot;:&quot;main.benefit-stats.search&quot;,&quot;inherit&quot;:false}"
-                                                ng-click="vm.menuClickLogging(menu1d.name + &#39;|&#39; + menu2d.name)">혜택
-                                                리포트 <!----> <!----> <!----> <!----> </a><!----><!----></li><!---->
-                                        <li ng-repeat="menu2d in ::menu1d.children track by $index"
-                                            ng-class="{&#39;selected&#39;: vm.currentMenu2d.state === menu2d.state}">
-                                            <!----><a ng-if="::menu2d.method !== &#39;NEW_LAYER&#39;"
-                                                href="https://sell.smartstore.naver.com/#/customer-manage/grade/list"
-                                                ui-sref="main.benefit.customer-manage.grade.list"
-                                                ui-sref-opts="{&quot;reload&quot;:&quot;main.benefit.customer-manage.grade.list&quot;,&quot;inherit&quot;:false}"
-                                                ng-click="vm.menuClickLogging(menu1d.name + &#39;|&#39; + menu2d.name)">고객등급
-                                                관리 <!----> <!----> <!----> <!----> </a><!----><!----></li><!---->
-                                        <li ng-repeat="menu2d in ::menu1d.children track by $index"
-                                            ng-class="{&#39;selected&#39;: vm.currentMenu2d.state === menu2d.state}">
-                                            <!----><a ng-if="::menu2d.method !== &#39;NEW_LAYER&#39;"
-                                                href="https://sell.smartstore.naver.com/#/naverpay/management"
-                                                ui-sref="main.naverpay_management"
-                                                ui-sref-opts="{&quot;reload&quot;:&quot;main.naverpay_management&quot;,&quot;inherit&quot;:false}"
-                                                ng-click="vm.menuClickLogging(menu1d.name + &#39;|&#39; + menu2d.name)">포인트
-                                                지급관리 <!----> <!----> <!----><i class="icon-dot" aria-hidden="true"
-                                                    ng-if="::menu2d.isNewMenu"></i><!----> <!----><span
-                                                    class="sr-only" ng-if="::menu2d.isNewMenu">new</span><!---->
-                                            </a><!----><!----></li><!---->
-                                        <li ng-repeat="menu2d in ::menu1d.children track by $index"
-                                            ng-class="{&#39;selected&#39;: vm.currentMenu2d.state === menu2d.state}">
-                                            <!----><a ng-if="::menu2d.method !== &#39;NEW_LAYER&#39;"
-                                                href="https://sell.smartstore.naver.com/#/naverpay/naverPoint"
-                                                ui-sref="main.naverpay_naverPoint"
-                                                ui-sref-opts="{&quot;reload&quot;:&quot;main.naverpay_naverPoint&quot;,&quot;inherit&quot;:false}"
-                                                ng-click="vm.menuClickLogging(menu1d.name + &#39;|&#39; + menu2d.name)">포인트
-                                                지급내역 조회 <!----> <!----> <!----> <!----> </a><!----><!----></li>
-                                        <!---->
+                                </li>
+                                <li>
+                                    <a x-on:click="benefit = ! benefit" role="menuitem" aria-expanded="false">
+                                        고객헤택관리
+                                        <span class="label label-new label-new-xs">N</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 inline-block text-gray-400 float-right mt-2"
+                                        :class="benefit ? 'rotate-180' : ''">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                                        </svg>
+                                    </a>
+                                    <ul x-cloak x-show="benefit" x-on:click.outside="benefit = false" aria-expanded="false" class="submenu in">
+                                        <li>
+                                            <a href="#">혜택 등록</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">혜택 조회/수정</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">혜택 리포트</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">고객등급 관리</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">포인트 지급관리
+                                                <span class="sr-only">new</span>
+                                                <span class="inline-block h-2 w-2 ml-1 -translate-y-1/2 translate-x-1/2 transform rounded-full bg-red-400"></span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">포인트 지급내역 조회</a>
+                                        </li>
                                     </ul>
-                                </li><!---->
-                                <li ng-repeat="menu1d in ::vm.lnbMenus track by $index"><a role="menuitem"
-                                        aria-expanded="false" href="https://sell.smartstore.naver.com/"
-                                        ng-click="vm.menuClickLogging(menu1d.name, $event)">마케팅메세지 <!----> <!---->
-                                        <!----> <!----></a>
-                                    <ul aria-expanded="false" class="submenu collapse"><!---->
-                                        <li ng-repeat="menu2d in ::menu1d.children track by $index"
-                                            ng-class="{&#39;selected&#39;: vm.currentMenu2d.state === menu2d.state}">
-                                            <!----><a ng-if="::menu2d.method !== &#39;NEW_LAYER&#39;"
-                                                href="https://sell.smartstore.naver.com/#/marketing-message/search"
-                                                ui-sref="main.marketing-message.marketing-send"
-                                                ui-sref-opts="{&quot;reload&quot;:&quot;main.marketing-message.marketing-send&quot;,&quot;inherit&quot;:false}"
-                                                ng-click="vm.menuClickLogging(menu1d.name + &#39;|&#39; + menu2d.name)">마케팅
-                                                보내기 <!----> <!----> <!----> <!----> </a><!----><!----></li><!---->
-                                        <li ng-repeat="menu2d in ::menu1d.children track by $index"
-                                            ng-class="{&#39;selected&#39;: vm.currentMenu2d.state === menu2d.state}">
-                                            <!----><a ng-if="::menu2d.method !== &#39;NEW_LAYER&#39;"
-                                                href="https://sell.smartstore.naver.com/#/marketing-message/histories"
-                                                ui-sref="main.marketing-message.marketing-history"
-                                                ui-sref-opts="{&quot;reload&quot;:&quot;main.marketing-message.marketing-history&quot;,&quot;inherit&quot;:false}"
-                                                ng-click="vm.menuClickLogging(menu1d.name + &#39;|&#39; + menu2d.name)">마케팅
-                                                이력 <!----> <!----> <!----> <!----> </a><!----><!----></li><!---->
-                                        <li ng-repeat="menu2d in ::menu1d.children track by $index"
-                                            ng-class="{&#39;selected&#39;: vm.currentMenu2d.state === menu2d.state}">
-                                            <!----><a ng-if="::menu2d.method !== &#39;NEW_LAYER&#39;"
-                                                href="https://sell.smartstore.naver.com/#/marketing-message/stats"
-                                                ui-sref="main.marketing-message.marketing-stats"
-                                                ui-sref-opts="{&quot;reload&quot;:&quot;main.marketing-message.marketing-stats&quot;,&quot;inherit&quot;:false}"
-                                                ng-click="vm.menuClickLogging(menu1d.name + &#39;|&#39; + menu2d.name)">마케팅
-                                                통계 <!----> <!----> <!----> <!----> </a><!----><!----></li><!---->
-                                        <li ng-repeat="menu2d in ::menu1d.children track by $index"
-                                            ng-class="{&#39;selected&#39;: vm.currentMenu2d.state === menu2d.state}">
-                                            <!----><a ng-if="::menu2d.method !== &#39;NEW_LAYER&#39;"
-                                                href="https://sell.smartstore.naver.com/#/marketing-message/advertisement"
-                                                ui-sref="main.marketing-message.marketing-advertisement"
-                                                ui-sref-opts="{&quot;reload&quot;:&quot;main.marketing-message.marketing-advertisement&quot;,&quot;inherit&quot;:false}"
-                                                ng-click="vm.menuClickLogging(menu1d.name + &#39;|&#39; + menu2d.name)">쇼핑
-                                                소식 광고 소개 <!----> <!----><i class="icon-beta" aria-label="beta"
-                                                    ng-if="::menu2d.isBetaMenu"></i><!----> <!----><i
-                                                    class="icon-dot" aria-hidden="true"
-                                                    ng-if="::menu2d.isNewMenu"></i><!----> <!----><span
-                                                    class="sr-only" ng-if="::menu2d.isNewMenu">new</span><!---->
-                                            </a><!----><!----></li><!---->
+                                </li>
+                                <li>
+                                    <a x-on:click="marketing = ! marketing" role="menuitem" aria-expanded="false">
+                                        마케팅메세지
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 inline-block text-gray-400 float-right mt-2"
+                                        :class="marketing ? 'rotate-180' : ''">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                                        </svg>
+                                    </a>
+                                    <ul x-cloak x-show="marketing" x-on:click.outside="marketing = false" aria-expanded="false" class="submenu in">
+                                        <li>
+                                            <a href="#">마케팅 보내기</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">마케팅 이력</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">마케팅 통계</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">쇼핑 소식 광고 소개
+                                                <span class="sr-only">new</span>
+                                                <span class="inline-block h-2 w-2 ml-1 -translate-y-1/2 translate-x-1/2 transform rounded-full bg-red-400"></span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">포인트 지급내역 조회</a>
+                                        </li>
                                     </ul>
-                                </li><!---->
-                                <li ng-repeat="menu1d in ::vm.lnbMenus track by $index"><a role="menuitem"
-                                        aria-expanded="false" href="https://sell.smartstore.naver.com/"
-                                        ng-click="vm.menuClickLogging(menu1d.name, $event)">커머스솔루션 <!----> <!---->
-                                        <!----><span class="label label-new label-new-xs" aria-label="new"
-                                            ng-if="::menu1d.isNewMenu">N</span><!----> <!----></a>
-                                    <ul aria-expanded="false" class="submenu collapse"><!---->
-                                        <li ng-repeat="menu2d in ::menu1d.children track by $index"
-                                            ng-class="{&#39;selected&#39;: vm.currentMenu2d.state === menu2d.state}">
-                                            <!----><a ng-if="::menu2d.method !== &#39;NEW_LAYER&#39;"
-                                                href="https://sell.smartstore.naver.com/#/commerce-solution/solution-list"
-                                                ui-sref="main.commerce-solution.solution-list"
-                                                ui-sref-opts="{&quot;reload&quot;:&quot;main.commerce-solution.solution-list&quot;,&quot;inherit&quot;:false}"
-                                                ng-click="vm.menuClickLogging(menu1d.name + &#39;|&#39; + menu2d.name)">솔루션
-                                                목록 <!----> <!----> <!----><i class="icon-dot" aria-hidden="true"
-                                                    ng-if="::menu2d.isNewMenu"></i><!----> <!----><span
-                                                    class="sr-only" ng-if="::menu2d.isNewMenu">new</span><!---->
-                                            </a><!----><!----></li><!---->
-                                        <li ng-repeat="menu2d in ::menu1d.children track by $index"
-                                            ng-class="{&#39;selected&#39;: vm.currentMenu2d.state === menu2d.state}">
-                                            <!----><a ng-if="::menu2d.method !== &#39;NEW_LAYER&#39;"
-                                                href="https://sell.smartstore.naver.com/#/commerce-solution/transaction-list"
-                                                ui-sref="main.commerce-solution.transaction-list"
-                                                ui-sref-opts="{&quot;reload&quot;:&quot;main.commerce-solution.transaction-list&quot;,&quot;inherit&quot;:false}"
-                                                ng-click="vm.menuClickLogging(menu1d.name + &#39;|&#39; + menu2d.name)">결제내역
-                                                <!----> <!----> <!----><i class="icon-dot" aria-hidden="true"
-                                                    ng-if="::menu2d.isNewMenu"></i><!----> <!----><span
-                                                    class="sr-only" ng-if="::menu2d.isNewMenu">new</span><!---->
-                                            </a><!----><!----></li><!---->
+                                </li>
+                                <li>
+                                    <a x-on:click="commerce = ! commerce" role="menuitem" aria-expanded="false">
+                                        커머스솔루션
+                                        <span class="label label-new label-new-xs">N</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 inline-block text-gray-400 float-right mt-2"
+                                        :class="commerce ? 'rotate-180' : ''">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                                        </svg>
+                                    </a>
+                                    <ul x-cloak x-show="commerce" x-on:click.outside="commerce = false" aria-expanded="false" class="submenu in">
+                                        <li>
+                                            <a href="#">솔루션 목록
+                                                <span class="sr-only">new</span>
+                                                <span class="inline-block h-2 w-2 ml-1 -translate-y-1/2 translate-x-1/2 transform rounded-full bg-red-400"></span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">결제내역
+                                                <span class="sr-only">new</span>
+                                                <span class="inline-block h-2 w-2 ml-1 -translate-y-1/2 translate-x-1/2 transform rounded-full bg-red-400"></span>
+                                            </a>
+                                        </li>
                                     </ul>
-                                </li><!---->
-                                <li ng-repeat="menu1d in ::vm.lnbMenus track by $index"><a role="menuitem"
-                                        aria-expanded="false" href="https://sell.smartstore.naver.com/"
-                                        ng-click="vm.menuClickLogging(menu1d.name, $event)">통계 <!----> <!---->
-                                        <!----><span class="label label-new label-new-xs" aria-label="new"
-                                            ng-if="::menu1d.isNewMenu">N</span><!----> <!----></a>
-                                    <ul aria-expanded="false" class="submenu collapse"><!---->
-                                        <li ng-repeat="menu2d in ::menu1d.children track by $index"
-                                            ng-class="{&#39;selected&#39;: vm.currentMenu2d.state === menu2d.state}">
-                                            <!----><a ng-if="::menu2d.method !== &#39;NEW_LAYER&#39;"
-                                                href="https://sell.smartstore.naver.com/#/bizadvisor/summary/ecommerce"
-                                                ui-sref="main.bizadvisor_summary_ecommerce"
-                                                ui-sref-opts="{&quot;reload&quot;:&quot;main.bizadvisor_summary_ecommerce&quot;,&quot;inherit&quot;:false}"
-                                                ng-click="vm.menuClickLogging(menu1d.name + &#39;|&#39; + menu2d.name)">요약
-                                                <!----> <!----> <!----><i class="icon-dot" aria-hidden="true"
-                                                    ng-if="::menu2d.isNewMenu"></i><!----> <!----><span
-                                                    class="sr-only" ng-if="::menu2d.isNewMenu">new</span><!---->
-                                            </a><!----><!----></li><!---->
-                                        <li ng-repeat="menu2d in ::menu1d.children track by $index"
-                                            ng-class="{&#39;selected&#39;: vm.currentMenu2d.state === menu2d.state}">
-                                            <!----><a ng-if="::menu2d.method !== &#39;NEW_LAYER&#39;"
-                                                href="https://sell.smartstore.naver.com/#/bizadvisor/sales"
-                                                ui-sref="main.bizadvisor_sales"
-                                                ui-sref-opts="{&quot;reload&quot;:&quot;main.bizadvisor_sales&quot;,&quot;inherit&quot;:false}"
-                                                ng-click="vm.menuClickLogging(menu1d.name + &#39;|&#39; + menu2d.name)">판매분석
-                                                <!----> <!----> <!----> <!----> </a><!----><!----></li><!---->
-                                        <li ng-repeat="menu2d in ::menu1d.children track by $index"
-                                            ng-class="{&#39;selected&#39;: vm.currentMenu2d.state === menu2d.state}">
-                                            <!----><a ng-if="::menu2d.method !== &#39;NEW_LAYER&#39;"
-                                                href="https://sell.smartstore.naver.com/#/bizadvisor/marketing"
-                                                ui-sref="main.bizadvisor_marketing"
-                                                ui-sref-opts="{&quot;reload&quot;:&quot;main.bizadvisor_marketing&quot;,&quot;inherit&quot;:false}"
-                                                ng-click="vm.menuClickLogging(menu1d.name + &#39;|&#39; + menu2d.name)">마케팅분석
-                                                <!----> <!----> <!----> <!----> </a><!----><!----></li><!---->
-                                        <li ng-repeat="menu2d in ::menu1d.children track by $index"
-                                            ng-class="{&#39;selected&#39;: vm.currentMenu2d.state === menu2d.state}">
-                                            <!----><a ng-if="::menu2d.method !== &#39;NEW_LAYER&#39;"
-                                                href="https://sell.smartstore.naver.com/#/bizadvisor/shopping/product"
-                                                ui-sref="main.bizadvisor_shopping_product"
-                                                ui-sref-opts="{&quot;reload&quot;:&quot;main.bizadvisor_shopping_product&quot;,&quot;inherit&quot;:false}"
-                                                ng-click="vm.menuClickLogging(menu1d.name + &#39;|&#39; + menu2d.name)">쇼핑행동분석
-                                                <!----> <!----> <!----> <!----> </a><!----><!----></li><!---->
-                                        <li ng-repeat="menu2d in ::menu1d.children track by $index"
-                                            ng-class="{&#39;selected&#39;: vm.currentMenu2d.state === menu2d.state}">
-                                            <!----><a ng-if="::menu2d.method !== &#39;NEW_LAYER&#39;"
-                                                href="https://sell.smartstore.naver.com/#/bizadvisor/market/benchmark"
-                                                ui-sref="main.bizadvisor_market_benchmark"
-                                                ui-sref-opts="{&quot;reload&quot;:&quot;main.bizadvisor_market_benchmark&quot;,&quot;inherit&quot;:false}"
-                                                ng-click="vm.menuClickLogging(menu1d.name + &#39;|&#39; + menu2d.name)">시장벤치마크
-                                                <!----> <!----> <!----> <!----> </a><!----><!----></li><!---->
-                                        <li ng-repeat="menu2d in ::menu1d.children track by $index"
-                                            ng-class="{&#39;selected&#39;: vm.currentMenu2d.state === menu2d.state}">
-                                            <!----><a ng-if="::menu2d.method !== &#39;NEW_LAYER&#39;"
-                                                href="https://sell.smartstore.naver.com/#/bizadvisor/bizInsight/predictive"
-                                                ui-sref="main.bizadvisor_bizinsight_predictive"
-                                                ui-sref-opts="{&quot;reload&quot;:&quot;main.bizadvisor_bizinsight_predictive&quot;,&quot;inherit&quot;:false}"
-                                                ng-click="vm.menuClickLogging(menu1d.name + &#39;|&#39; + menu2d.name)">판매성과예측
-                                                <!----> <!----> <!----> <!----> </a><!----><!----></li><!---->
-                                        <li ng-repeat="menu2d in ::menu1d.children track by $index"
-                                            ng-class="{&#39;selected&#39;: vm.currentMenu2d.state === menu2d.state}">
-                                            <!----><a ng-if="::menu2d.method !== &#39;NEW_LAYER&#39;"
-                                                href="https://sell.smartstore.naver.com/#/customer-stats/search"
-                                                ui-sref="main.customer-stats.search"
-                                                ui-sref-opts="{&quot;reload&quot;:&quot;main.customer-stats.search&quot;,&quot;inherit&quot;:false}"
-                                                ng-click="vm.menuClickLogging(menu1d.name + &#39;|&#39; + menu2d.name)">고객현황
-                                                <!----> <!----> <!----> <!----> </a><!----><!----></li><!---->
-                                        <li ng-repeat="menu2d in ::menu1d.children track by $index"
-                                            ng-class="{&#39;selected&#39;: vm.currentMenu2d.state === menu2d.state}">
-                                            <!----><a ng-if="::menu2d.method !== &#39;NEW_LAYER&#39;"
-                                                href="https://sell.smartstore.naver.com/#/customer-purchase-stats/search"
-                                                ui-sref="main.benefit.customer-purchase-stats.search"
-                                                ui-sref-opts="{&quot;reload&quot;:&quot;main.benefit.customer-purchase-stats.search&quot;,&quot;inherit&quot;:false}"
-                                                ng-click="vm.menuClickLogging(menu1d.name + &#39;|&#39; + menu2d.name)">재구매
-                                                통계 <!----> <!----> <!----> <!----> </a><!----><!----></li><!---->
+                                </li>
+                                <li>
+                                    <a x-on:click="analysis = ! analysis" role="menuitem" aria-expanded="false">
+                                        통계
+                                        <span class="label label-new label-new-xs">N</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 inline-block text-gray-400 float-right mt-2"
+                                        :class="analysis ? 'rotate-180' : ''">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                                        </svg>
+                                    </a>
+                                    <ul x-cloak x-show="analysis" x-on:click.outside="analysis = false" aria-expanded="false" class="submenu in">
+                                        <li>
+                                            <a href="#">요약
+                                                <span class="sr-only">new</span>
+                                                <span class="inline-block h-2 w-2 ml-1 -translate-y-1/2 translate-x-1/2 transform rounded-full bg-red-400"></span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">판매분석</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">마케팅분석</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">쇼핑행동분석</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">시장벤치마크</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">판매성과예측</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">고객현황</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">재구매 통계</a>
+                                        </li>
                                     </ul>
-                                </li><!---->
-                                <li ng-repeat="menu1d in ::vm.lnbMenus track by $index"><a role="menuitem"
-                                        aria-expanded="false" href="https://sell.smartstore.naver.com/"
-                                        ng-click="vm.menuClickLogging(menu1d.name, $event)">원쁠딜 <!----> <!---->
-                                        <!----><span class="label label-new label-new-xs" aria-label="new"
-                                            ng-if="::menu1d.isNewMenu">N</span><!----> <!----></a>
-                                    <ul aria-expanded="false" class="submenu collapse"><!---->
-                                        <li ng-repeat="menu2d in ::menu1d.children track by $index"
-                                            ng-class="{&#39;selected&#39;: vm.currentMenu2d.state === menu2d.state}">
-                                            <!----><a ng-if="::menu2d.method !== &#39;NEW_LAYER&#39;"
-                                                href="https://sell.smartstore.naver.com/#/plusdeal/ad/introduction"
-                                                ui-sref="main.plusdeal.introduction"
-                                                ui-sref-opts="{&quot;reload&quot;:&quot;main.plusdeal.introduction&quot;,&quot;inherit&quot;:false}"
-                                                ng-click="vm.menuClickLogging(menu1d.name + &#39;|&#39; + menu2d.name)">원쁠딜
-                                                소개 <!----> <!----> <!----><i class="icon-dot" aria-hidden="true"
-                                                    ng-if="::menu2d.isNewMenu"></i><!----> <!----><span
-                                                    class="sr-only" ng-if="::menu2d.isNewMenu">new</span><!---->
-                                            </a><!----><!----></li><!---->
-                                        <li ng-repeat="menu2d in ::menu1d.children track by $index"
-                                            ng-class="{&#39;selected&#39;: vm.currentMenu2d.state === menu2d.state}">
-                                            <!----><a ng-if="::menu2d.method !== &#39;NEW_LAYER&#39;"
-                                                href="https://sell.smartstore.naver.com/#/plusdeal/ad/suggest/list"
-                                                ui-sref="main.plusdeal.suggest_list"
-                                                ui-sref-opts="{&quot;reload&quot;:&quot;main.plusdeal.suggest_list&quot;,&quot;inherit&quot;:false}"
-                                                ng-click="vm.menuClickLogging(menu1d.name + &#39;|&#39; + menu2d.name)">원쁠딜
-                                                제안관리 <!----> <!----> <!----> <!----> </a><!----><!----></li><!---->
-                                        <li ng-repeat="menu2d in ::menu1d.children track by $index"
-                                            ng-class="{&#39;selected&#39;: vm.currentMenu2d.state === menu2d.state}">
-                                            <!----><a ng-if="::menu2d.method !== &#39;NEW_LAYER&#39;"
-                                                href="https://sell.smartstore.naver.com/#/plusitem/ad/contents/summary"
-                                                ui-sref="main.plusitem.contents_summary"
-                                                ui-sref-opts="{&quot;reload&quot;:&quot;main.plusitem.contents_summary&quot;,&quot;inherit&quot;:false}"
-                                                ng-click="vm.menuClickLogging(menu1d.name + &#39;|&#39; + menu2d.name)">원쁠템
-                                                제안관리 <!----> <!----> <!----> <!----> </a><!----><!----></li><!---->
-                                        <li ng-repeat="menu2d in ::menu1d.children track by $index"
-                                            ng-class="{&#39;selected&#39;: vm.currentMenu2d.state === menu2d.state}">
-                                            <!----><a ng-if="::menu2d.method !== &#39;NEW_LAYER&#39;"
-                                                href="https://sell.smartstore.naver.com/#/plusdeal/ad/notice"
-                                                ui-sref="main.plusdeal.notice"
-                                                ui-sref-opts="{&quot;reload&quot;:&quot;main.plusdeal.notice&quot;,&quot;inherit&quot;:false}"
-                                                ng-click="vm.menuClickLogging(menu1d.name + &#39;|&#39; + menu2d.name)">공지/FAQ
-                                                <!----> <!----> <!----> <!----> </a><!----><!----></li><!---->
+                                </li>
+                                <li>
+                                    <a x-on:click="deal = ! deal" role="menuitem" aria-expanded="false">
+                                        원쁠딜
+                                        <span class="label label-new label-new-xs">N</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 inline-block text-gray-400 float-right mt-2"
+                                        :class="deal ? 'rotate-180' : ''">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                                        </svg>
+                                    </a>
+                                    <ul x-cloak x-show="deal" x-on:click.outside="deal = false" aria-expanded="false" class="submenu in">
+                                        <li>
+                                            <a href="#">원쁠딜 소개
+                                                <span class="sr-only">new</span>
+                                                <span class="inline-block h-2 w-2 ml-1 -translate-y-1/2 translate-x-1/2 transform rounded-full bg-red-400"></span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">원쁠딜 제안관리</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">마케팅분석</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">원쁠템 제안관리</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">공지/FAQ</a>
+                                        </li>
                                     </ul>
-                                </li><!---->
-                                <li ng-repeat="menu1d in ::vm.lnbMenus track by $index"><a role="menuitem"
-                                        aria-expanded="false" href="https://sell.smartstore.naver.com/"
-                                        ng-click="vm.menuClickLogging(menu1d.name, $event)">판매자지원프로그램 <!---->
-                                        <!----> <!----> <!----></a>
-                                    <ul aria-expanded="false" class="submenu collapse"><!---->
-                                        <li ng-repeat="menu2d in ::menu1d.children track by $index"
-                                            ng-class="{&#39;selected&#39;: vm.currentMenu2d.state === menu2d.state}">
-                                            <!----><a ng-if="::menu2d.method !== &#39;NEW_LAYER&#39;"
-                                                href="https://sell.smartstore.naver.com/#/seller-support/start-zero-commission"
-                                                ui-sref="main.seller-support.start-zero-commission"
-                                                ui-sref-opts="{&quot;reload&quot;:&quot;main.seller-support.start-zero-commission&quot;,&quot;inherit&quot;:false}"
-                                                ng-click="vm.menuClickLogging(menu1d.name + &#39;|&#39; + menu2d.name)">판매자
-                                                지원 프로그램 <!----> <!----> <!----> <!----> </a><!----><!----></li>
-                                        <!---->
+                                </li>
+                                <li>
+                                    <a x-on:click="support = ! support" role="menuitem" aria-expanded="false">
+                                        판매자지원프로그램
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 inline-block text-gray-400 float-right mt-2"
+                                        :class="support ? 'rotate-180' : ''">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                                        </svg>
+                                    </a>
+                                    <ul x-cloak x-show="support" x-on:click.outside="support = false" aria-expanded="false" class="submenu in">
+                                        <li>
+                                            <a href="#">판매자 지원 프로그램</a>
+                                        </li>
                                     </ul>
-                                </li><!---->
-                                <li ng-repeat="menu1d in ::vm.lnbMenus track by $index"><a role="menuitem"
-                                        aria-expanded="false" href="https://sell.smartstore.naver.com/"
-                                        ng-click="vm.menuClickLogging(menu1d.name, $event)">판매자정보 <!----> <!---->
-                                        <!----> <!----></a>
-                                    <ul aria-expanded="false" class="submenu collapse"><!---->
-                                        <li ng-repeat="menu2d in ::menu1d.children track by $index"
-                                            ng-class="{&#39;selected&#39;: vm.currentMenu2d.state === menu2d.state}">
-                                            <!----><a ng-if="::menu2d.method !== &#39;NEW_LAYER&#39;"
-                                                href="https://sell.smartstore.naver.com/#/seller/info"
-                                                ui-sref="main.seller-info"
-                                                ui-sref-opts="{&quot;reload&quot;:&quot;main.seller-info&quot;,&quot;inherit&quot;:false}"
-                                                ng-click="vm.menuClickLogging(menu1d.name + &#39;|&#39; + menu2d.name)">판매자
-                                                정보 <!----> <!----> <!----> <!----> </a><!----><!----></li><!---->
-                                        <li ng-repeat="menu2d in ::menu1d.children track by $index"
-                                            ng-class="{&#39;selected&#39;: vm.currentMenu2d.state === menu2d.state}">
-                                            <!----><a ng-if="::menu2d.method !== &#39;NEW_LAYER&#39;"
-                                                href="https://sell.smartstore.naver.com/#/member/auth/sell"
-                                                ui-sref="main.sell-auth-management"
-                                                ui-sref-opts="{&quot;reload&quot;:&quot;main.sell-auth-management&quot;,&quot;inherit&quot;:false}"
-                                                ng-click="vm.menuClickLogging(menu1d.name + &#39;|&#39; + menu2d.name)">상품판매권한
-                                                신청 <!----> <!----> <!----> <!----> </a><!----><!----></li><!---->
-                                        <li ng-repeat="menu2d in ::menu1d.children track by $index"
-                                            ng-class="{&#39;selected&#39;: vm.currentMenu2d.state === menu2d.state}">
-                                            <!----><a ng-if="::menu2d.method !== &#39;NEW_LAYER&#39;"
-                                                href="https://sell.smartstore.naver.com/#/judgment/list"
-                                                ui-sref="main.judgment.list"
-                                                ui-sref-opts="{&quot;reload&quot;:&quot;main.judgment.list&quot;,&quot;inherit&quot;:false}"
-                                                ng-click="vm.menuClickLogging(menu1d.name + &#39;|&#39; + menu2d.name)">심사내역
-                                                조회 <!----> <!----> <!----> <!----> </a><!----><!----></li><!---->
-                                        <li ng-repeat="menu2d in ::menu1d.children track by $index"
-                                            ng-class="{&#39;selected&#39;: vm.currentMenu2d.state === menu2d.state}">
-                                            <!----><a ng-if="::menu2d.method !== &#39;NEW_LAYER&#39;"
-                                                href="https://sell.smartstore.naver.com/#/seller/grade"
-                                                ui-sref="main.seller-grade"
-                                                ui-sref-opts="{&quot;reload&quot;:&quot;main.seller-grade&quot;,&quot;inherit&quot;:false}"
-                                                ng-click="vm.menuClickLogging(menu1d.name + &#39;|&#39; + menu2d.name)">판매자
-                                                등급 <!----> <!----> <!----> <!----> </a><!----><!----></li><!---->
-                                        <li ng-repeat="menu2d in ::menu1d.children track by $index"
-                                            ng-class="{&#39;selected&#39;: vm.currentMenu2d.state === menu2d.state}">
-                                            <!----><a ng-if="::menu2d.method !== &#39;NEW_LAYER&#39;"
-                                                href="https://sell.smartstore.naver.com/#/member/auth/management"
-                                                ui-sref="main.member-auth-management"
-                                                ui-sref-opts="{&quot;reload&quot;:&quot;main.member-auth-management&quot;,&quot;inherit&quot;:false}"
-                                                ng-click="vm.menuClickLogging(menu1d.name + &#39;|&#39; + menu2d.name)">매니저
-                                                관리 <!----> <!----> <!----> <!----> </a><!----><!----></li><!---->
-                                        <li ng-repeat="menu2d in ::menu1d.children track by $index"
-                                            ng-class="{&#39;selected&#39;: vm.currentMenu2d.state === menu2d.state}">
-                                            <!----><a ng-if="::menu2d.method !== &#39;NEW_LAYER&#39;"
-                                                href="https://sell.smartstore.naver.com/#/seller/switch"
-                                                ui-sref="main.seller-switch"
-                                                ui-sref-opts="{&quot;reload&quot;:&quot;main.seller-switch&quot;,&quot;inherit&quot;:false}"
-                                                ng-click="vm.menuClickLogging(menu1d.name + &#39;|&#39; + menu2d.name)">사업자
-                                                전환 <!----> <!----> <!----> <!----> </a><!----><!----></li><!---->
+                                </li>
+                                <li>
+                                    <a x-on:click="information = ! information" role="menuitem" aria-expanded="false">
+                                        판매자정보
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 inline-block text-gray-400 float-right mt-2"
+                                        :class="information ? 'rotate-180' : ''">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                                        </svg>
+                                    </a>
+                                    <ul x-cloak x-show="information" x-on:click.outside="information = false" aria-expanded="false" class="submenu in">
+                                        <li>
+                                            <a href="#">판매자 정보</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">상품판매권한 신청</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">심사내역 조회</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">판매자 등급</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">매니저 관리</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">사업자 전환</a>
+                                        </li>
                                     </ul>
-                                </li><!---->
-                                <li ng-repeat="menu1d in ::vm.lnbMenus track by $index"><a role="menuitem"
-                                        aria-expanded="false" href="https://sell.smartstore.naver.com/"
-                                        ng-click="vm.menuClickLogging(menu1d.name, $event)">지식재산권침해관리 <!---->
-                                        <!----> <!----> <!----></a>
-                                    <ul aria-expanded="false" class="submenu collapse"><!---->
-                                        <li ng-repeat="menu2d in ::menu1d.children track by $index"
-                                            ng-class="{&#39;selected&#39;: vm.currentMenu2d.state === menu2d.state}">
-                                            <!----><a ng-if="::menu2d.method !== &#39;NEW_LAYER&#39;"
-                                                href="https://sell.smartstore.naver.com/#/ips/seller/reports"
-                                                ui-sref="main.ips_seller_reports"
-                                                ui-sref-opts="{&quot;reload&quot;:&quot;main.ips_seller_reports&quot;,&quot;inherit&quot;:false}"
-                                                ng-click="vm.menuClickLogging(menu1d.name + &#39;|&#39; + menu2d.name)">지식재산권
-                                                침해관리 <!----> <!----> <!----> <!----> </a><!----><!----></li><!---->
+                                </li>
+                                <li>
+                                    <a x-on:click="patent = ! patent" role="menuitem" aria-expanded="false">
+                                        지식재산권침해관리
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 inline-block text-gray-400 float-right mt-2"
+                                        :class="patent ? 'rotate-180' : ''">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                                        </svg>
+                                    </a>
+                                    <ul x-cloak x-show="patent" x-on:click.outside="patent = false" aria-expanded="false" class="submenu in">
+                                        <li>
+                                            <a href="#">지식재산권 침해관리</a>
+                                        </li>
                                     </ul>
-                                </li><!---->
-                                <li ng-repeat="menu1d in ::vm.lnbMenus track by $index"><a role="menuitem"
-                                        aria-expanded="false" href="https://sell.smartstore.naver.com/"
-                                        ng-click="vm.menuClickLogging(menu1d.name, $event)">물류 관리 <!----> <!---->
-                                        <!----><span class="label label-new label-new-xs" aria-label="new"
-                                            ng-if="::menu1d.isNewMenu">N</span><!----> <!----></a>
-                                    <ul aria-expanded="false" class="submenu collapse"><!---->
-                                        <li ng-repeat="menu2d in ::menu1d.children track by $index"
-                                            ng-class="{&#39;selected&#39;: vm.currentMenu2d.state === menu2d.state}">
-                                            <!----><a ng-if="::menu2d.method !== &#39;NEW_LAYER&#39;"
-                                                href="https://sell.smartstore.naver.com/#/logistics/info"
-                                                ui-sref="main.logistics.info"
-                                                ui-sref-opts="{&quot;reload&quot;:&quot;main.logistics.info&quot;,&quot;inherit&quot;:false}"
-                                                ng-click="vm.menuClickLogging(menu1d.name + &#39;|&#39; + menu2d.name)">NFA
-                                                서비스 신청 <!----> <!----> <!----><i class="icon-dot" aria-hidden="true"
-                                                    ng-if="::menu2d.isNewMenu"></i><!----> <!----><span
-                                                    class="sr-only" ng-if="::menu2d.isNewMenu">new</span><!---->
-                                            </a><!----><!----></li><!---->
-                                        <li ng-repeat="menu2d in ::menu1d.children track by $index"
-                                            ng-class="{&#39;selected&#39;: vm.currentMenu2d.state === menu2d.state}">
-                                            <!----><a ng-if="::menu2d.method !== &#39;NEW_LAYER&#39;"
-                                                href="https://sell.smartstore.naver.com/#/sales-forecast"
-                                                ui-sref="main.sales-forecast"
-                                                ui-sref-opts="{&quot;reload&quot;:&quot;main.sales-forecast&quot;,&quot;inherit&quot;:false}"
-                                                ng-click="vm.menuClickLogging(menu1d.name + &#39;|&#39; + menu2d.name)">판매량
-                                                예측 <!----> <!----> <!----> <!----> </a><!----><!----></li><!---->
+                                </li>
+                                <li>
+                                    <a x-on:click="distribution = ! distribution" role="menuitem" aria-expanded="false">
+                                        물류관리
+                                        <span class="label label-new label-new-xs">N</span>
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 inline-block text-gray-400 float-right mt-2"
+                                        :class="distribution ? 'rotate-180' : ''">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                                        </svg>
+                                    </a>
+                                    <ul x-cloak x-show="distribution" x-on:click.outside="distribution = false" aria-expanded="false" class="submenu in">
+                                        <li>
+                                            <a href="#">NFA 서비스 신청
+                                                <span class="sr-only">new</span>
+                                                <span class="inline-block h-2 w-2 ml-1 -translate-y-1/2 translate-x-1/2 transform rounded-full bg-red-400"></span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">판매량 예측</a>
+                                        </li>
                                     </ul>
-                                </li><!---->
-                                <li ng-repeat="menu1d in ::vm.lnbMenus track by $index"><a role="menuitem"
-                                        aria-expanded="false" href="https://sell.smartstore.naver.com/"
-                                        ng-click="vm.menuClickLogging(menu1d.name, $event)">공지사항 <!----> <!---->
-                                        <!----> <!----></a>
-                                    <ul aria-expanded="false" class="submenu collapse"><!---->
-                                        <li ng-repeat="menu2d in ::menu1d.children track by $index"
-                                            ng-class="{&#39;selected&#39;: vm.currentMenu2d.state === menu2d.state}">
-                                            <!----><a ng-if="::menu2d.method !== &#39;NEW_LAYER&#39;"
-                                                href="https://sell.smartstore.naver.com/#/center-notice/list/"
-                                                ui-sref="main.centernotice.list"
-                                                ui-sref-opts="{&quot;reload&quot;:&quot;main.centernotice.list&quot;,&quot;inherit&quot;:false}"
-                                                ng-click="vm.menuClickLogging(menu1d.name + &#39;|&#39; + menu2d.name)">공지사항
-                                                <!----> <!----> <!----> <!----> </a><!----><!----></li><!---->
+                                </li>
+                                <li>
+                                    <a x-on:click="notice = ! notice" role="menuitem" aria-expanded="false">
+                                        공지사항
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 inline-block text-gray-400 float-right mt-2"
+                                        :class="notice ? 'rotate-180' : ''">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                                        </svg>
+                                    </a>
+                                    <ul x-cloak x-show="notice" x-on:click.outside="notice = false" aria-expanded="false" class="submenu in">
+                                        <li>
+                                            <a href="#">공지사항</a>
+                                        </li>
                                     </ul>
-                                </li><!---->
-                            </ul><!---->
+                                </li>
+                            </ul>
+
+
+                            
                             <div class="outer-link" ncp-click-log="" group-state-code="layout" action-id="lnb.link">
                                 <h2 class="title">교육 프로그램 바로가기</h2>
-                                <ul role="menu" class="outer-menu">
+                                <ul role="menu" class="outer-menu mt-2">
                                     <li><a role="menuitem" href="https://bizschool.naver.com/" target="_blank"
                                             class="link" data-action-location-id="onlineEdu">온라인 교육 <i
                                                 class="fn-booking fn-booking-newlayer" aria-hidden="true"></i></a>
@@ -1077,8 +799,8 @@
                         </div>
                     </div>
                 </nav>
-                    
-                
+
+
                 <main class="seller-content" role="main">
                     <div id="seller-content" class="seller-sub-frame"><!----><!----><!----><ui-view>
                             <div class="seller-dashboard"><!---->
@@ -4472,7 +4194,7 @@
                             </div>
                         </ui-view></div>
                 </main>
-                
+
                 <footer class="seller-footer" role="contentinfo" ng-if="::!vm.isMobile">
                     <div class="inner-footer" ncp-click-log="" action-id="footer.link">
                         <ul class="provision">
